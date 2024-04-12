@@ -20,23 +20,24 @@ graph TD;
     aguardar_viatura --> fim_atendimento(Fim)
     iniciar_protocolo_pcr --> posicionar_bracos[Coloque os braços do paciente esticados \nao longo do corpo, com o rosto dele voltado\npara cima]
     posicionar_bracos --> verificar_idade[O paciente é bebê com menos de 1 ano?]
-    verificar_idade --> |Não|posicionar_adulto[Ajoelhe-se ao lado do corpo\nColoque uma mão sobre a outra, entrelaçando os dedos de cima e os de baixo\nEstique os braços sem dobrar os cotovelos\nColoque a mão no meio do peito dele, na linha do mamilo]
-    verificar_idade --> |Sim|posicionar_bebe[Coloque o bebê numa mesa ou no chão efique de frente pra ele\nSegure o corpo dele deixando\nos polegares na linha do mamilo]
+    verificar_idade --> |Não|posicionar_adulto[Ajoelhe-se ao lado dela\nColoque uma mão sobre a outra, com os dedo\nda mão de cima entrelaçando os dedos da mão de baixo\nEstique os braços sem dobrar os cotovelos\nColoque a mão no centro do peito dela, na linha do mamilo]
+    verificar_idade --> |Sim|posicionar_bebe[Coloque o bebê numa mesa ou no chão e fique de frente pra ele\nSegure o corpo dele deixando\nos polegares na linha do mamilo]
     posicionar_adulto --> orientacao_boca_boca[Não faça respiração boca-a-boca]
     posicionar_bebe --> orientacao_boca_boca
     orientacao_boca_boca --> orientacao_compressoes[Faça compressões fortes\nElas devem afundar as costelas uns dois dedos]
     orientacao_compressoes --> orientar_compressoes[Vou começar a bater palmas e você vai\nfazer as compressões no ritmo delas]
-    orientar_compressoes --> abrir_metronomo(Inicie o metrônomo abaixo e bata\npalmas no ritmo perto do fone para\norientar o solicitante):::atendente
-    abrir_metronomo --> marcar_tempo(Faça o procedimento\npor 2 minutos):::atendente
+    orientar_compressoes --> abrir_metronomo(Inicie o metrônomo abaixo e bata\npalmas no ritmo perto do fone para\norientar o solicitante):::link
+    abrir_metronomo --> marcar_tempo(Não pare até que a pessoa\nabra o olho ou o socorro chegue no local ):::atendente
     marcar_tempo --> verificar_paciente[Paciente se movimentou? Abriu o olho?]
-    verificar_paciente --> |Sim|aguardar_viatura_2[Excelente. Deixe o paciente desse jeito e \naguarde a chegada da viatura]
+    verificar_paciente --> |Sim|aguardar_viatura_2[Excelente. Deixe o paciente desse jeito e \naguarde a chegada da viatura] --> fim_atendimento2(Fim)
     verificar_paciente --> |Não|verificar_novamente_revezamento[Existe alguma outra pessoa pra revezar?]
     verificar_novamente_revezamento --> |Sim|pedir_para_revezar[Troque com outra pessoa e peça pra ela\nrepetir o procedimento]
-    verificar_novamente_revezamento --> |Não|continuar_rcp[Você está indo muito bem, não pare\nContinue assim, até a chegada da viatura]
+    verificar_novamente_revezamento --> |Não|continuar_rcp[Você está indo muito bem, não pare\nContinue assim até a chegada do socorro]
     pedir_para_revezar --> abrir_metronomo
     continuar_rcp --> abrir_metronomo
 
     classDef atendente fill:#d66, color:#fff
+    classDef link fill:#33d, color:#fff
     click abrir_metronomo "#metrônomo" "Metrônomo"
     click aguardar_viatura_2 "../." "Retornar" _blank
 

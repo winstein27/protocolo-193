@@ -13,6 +13,8 @@ Corpo de Bombeiros Militar do Distrito Federal. Brasília - DF
 Bombeiros Militar do Distrito Federal. Brasília - DF
 - CBMDF. (2017). Política de Acionamento, Atendimento e Despacho. Corpo 
 de Bombeiros Militar do Distrito Federal, Brasília - DF.
+- CBMDF. (2022). Manual de Atendimento Pré-Hospitalar. Corpo 
+de Bombeiros Militar do Distrito Federal, Brasília - DF.
 - Departament of Fire-Rescue. (2016). Acesso em 21 de 05 de 2018, disponível 
 em [CITY OF MIAMI](http://www.miamigov.com/fire/dispatch.html)
 - PMSP. (2018). Último Segundo IG. (Polícia Militar do Estado de São Paulo) 
