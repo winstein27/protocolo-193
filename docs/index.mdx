@@ -56,7 +56,8 @@ graph TD;
 graph TD
     B["''Por falta de comunicação, esta\nligação será encerrada''"] --> C(Registrar número que efetuou a ligação \nno campo NÚMERO DO TELEFONE):::atendente
     C --> D(Classificar o atendimento como MUDO\nno campo CLASSIFICAÇÃO DA CHAMADA):::atendente
-    D --> E((Encerrar\nAtendimento))
+    D --> E(Informar se é MUDO ou QUEDA DE LIGAÇÃO no campo NARRATIVA):::atendente
+    E --> F((Encerrar\nAtendimento))
 
     classDef atendente fill:#d66, color:#fff
     classDef link fill:#33d, color:#fff
