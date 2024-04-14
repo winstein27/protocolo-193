@@ -109,15 +109,23 @@ graph TD
 
 ```mermaid
 graph TD
-    B(Identificar órgão responsável pela ocorrência):::link
-    B --> C["Senhor(a), essa ocorrência é atendida pelo ${ÓRGÃO}\nVamos transferir automaticamente sua ligação\n
-    Pedimos que aguarde na linha e, caso a ligação caia, faça contato novamente"]
-    C --> D("Transferir ligação para ${ÓRGÃO}"):::atendente
-    D --> E(Registrar a situação e para qual órgão\nfoi transferida a ligação no campo NARRATIVA):::atendente
+    B(Identificar órgão responsável pela ocorrência):::atendente --> C["Senhor(a), essa ocorrência não é atendida\npelo CBMDF, mas vou pesquisar o número"]
+    C --> D["Pesquisar telefone da Agência"]:::link
+    D --> D01(Telefone permite transferência?):::atendente
+    D01 --> |Sim|D02["Vamos transferir automaticamente sua ligação\nPedimos que aguarde na linha 
+    e, caso a ligação caia, faça contato novamente"]
+    D02 --> D03(Copiar o telefone):::atendente
+    D03 --> D1(Clicar em Transferir):::atendente
+    D1 --> D2(Colar o telefone da Agência):::atendente
+    D2 --> D3(Transferir o chamado):::atendente
+    D01 --> |Não|D11["Por favor, anote o número"]
+    D11 --> D12(Informe o número ao solicitante):::atendente
+    D12 --> E(Registrar a situação e para qual órgão\nfoi transferida a ligação no campo NARRATIVA):::atendente
+    D3 --> E
     E --> F(Classificar o atendimento como CHAMADA TRANSFERIDA\nno campo CLASSIFICAÇÃO DA CHAMADA):::atendente
     F --> G((Encerrar\nAtendimento))
     
-    click B "/protocolo-193/telefones/#agências-externas" "Contatos das Agências Externas"
+    click D "/protocolo-193/telefones/#agências-externas" "Contatos das Agências Externas"
     classDef atendente fill:#d66, color:#fff
     classDef link fill:#33d, color:#fff
 ```
