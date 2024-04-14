@@ -6,31 +6,31 @@ sidebar_position: 4
 
 ## Agências Externas
 
-| Unidade | Local                                  | Contato |
-|---------|----------------------------------------|---------|
-| 3º BBM | SANTO ANTÔNIO DO DESCOBERTO | 36061649|
-| 5º BBM | LUZIÂNIA | 36224222|
-| 8º BBM | CRISTALINA | 36125360|
-| 19º BBM | FORMOSA | 36613920|
-| 20º BBM | ÁGUAS LINDAS | 36134938|
-| 9º CIBM | PLANALTINA DE GOIÁS | 36378398|
-| 26º CIBM | VALPARAÍSO / NOVO GAMA / OCIDENTAL |	36247409|
-| PRF | - | 191 |
-| PCDF |  - | 197 |
-| PMDF |  - | 190 |
-| SAMU |  - | 192 |
-| OUVIDORIA | - | 162
-| NEOENERGIA |  - | 116 |
-| BANCO DE LEITE | - | 160 (Opção 4) |
-| ZOONOSES |  - | 20171342<br/>20171343 | 
-| CAPTURA DE ANIMAL DE GRANDE PORTE |  - | 992847803<br/>983250369 | 
-| CAPTURA DE ANIMAL MORTO |  - | 32130178 | 
-| HOSPITAL VETERINÁRIO UNB |  - | 31072801 | 
-| CONSELHO TUTELAR |  - | 32130657 | 
-| DETRAN |  - | 154 | 
-| METRÔ |  - | 33537000 | 
-| CAPTURA DE ESCORPIÃO |  - | 34438817 | 
-| CVV - CENTRO DE VALORIZAÇÃO DA VIDA |  - | 188 | 
+| Unidade | Local                                  | Contato | PERMITE TRANSFERIR |
+|---------|----------------------------------------|---------|---------|
+| 3º BBM | SANTO ANTÔNIO DO DESCOBERTO | 36061649|✅|
+| 5º BBM | LUZIÂNIA | 36224222|❌<br/>(Apenas Whatsapp)|
+| 8º BBM | CRISTALINA | 36125360|✅|
+| 19º BBM | FORMOSA | 36613920|✅|
+| 20º BBM | ÁGUAS LINDAS | 36134938|✅|
+| 9º CIBM | PLANALTINA DE GOIÁS | 36378398|✅|
+| 26º CIBM | VALPARAÍSO / NOVO GAMA / OCIDENTAL |	36247409|✅|
+| PRF | - | 191 |✅|
+| PCDF |  - | 197 |✅|
+| PMDF |  - | 190 |✅|
+| SAMU |  - | 192 |✅|
+| OUVIDORIA | - | 162✅|
+| NEOENERGIA |  - | 116 ✅||
+| BANCO DE LEITE | - | 160 (Opção 4) |✅|
+| ZOONOSES |  - | 20171342<br/>20171343 |✅| 
+| CAPTURA DE ANIMAL DE GRANDE PORTE |  - | 992847803<br/>983250369 | ✅|
+| CAPTURA DE ANIMAL MORTO |  - | 32130178 | ✅|
+| HOSPITAL VETERINÁRIO UNB |  - | 31072801 | ✅|
+| CONSELHO TUTELAR |  - | 32130657 | ✅|
+| DETRAN |  - | 154 | ✅|
+| METRÔ |  - | 33537000 |✅| 
+| CAPTURA DE ESCORPIÃO |  - | 34438817 | ✅|
+| CVV - CENTRO DE VALORIZAÇÃO DA VIDA |  - | 188 | ✅|
 
 
 ## Quartéis do CBMDF
