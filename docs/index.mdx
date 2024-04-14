@@ -19,7 +19,7 @@ graph TD;
     Classificar_ocorrencia --> Coletar_relato(Colher breve relato da ocorrência\nno campo NARRATIVA):::Atendente
     Coletar_relato --> Coletar_cidade(Identificar UF e Município):::Atendente
     Coletar_cidade --> |Fora do DF|Transferir_ocorrencia(Transferir ocorrência para\noutra agência)
-    Coletar_cidade --> |Dentro do DF|Registrar_endereco(Digitar o endereço completo no campo LOGRADOURO):::Atendente
+    Coletar_cidade --> |Dentro do DF|Registrar_endereco(Digitar o endereço completo no campo COMPLEMENTO):::Atendente
     Registrar_endereco --> 
     Identificar_grupos(Identificar\nNatureza):::Atendente
     Identificar_grupos --> Natureza_nao_atendida_pelo_CBMDF("Natureza não\natendida pelo CBMDF"):::Atendente
