@@ -30,6 +30,7 @@ sidebar_position: 4
 | DETRAN |  - | 154 | 
 | METRÔ |  - | (61) 3353-7000 | 
 | CAPTURA DE ESCORPIÃO |  - | (61) 3443-8817 | 
+| CVV - CENTRO DE VALORIZAÇÃO DA VIDA |  - | 188 | 
 
 
 ## Quartéis do CBMDF
