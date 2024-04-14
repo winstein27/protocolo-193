@@ -10,9 +10,9 @@ sidebar_position: 1
 graph TD;
 
     saudacao_inicial["''BOMBEIROS, DISTRITO FEDERAL\nNO QUE PODEMOS AJUDAR?''\n\n (Repita até 3x)"]-->|Não Respondeu|Mudo(Mudo ou\nQueda de Ligação):::Link
-    saudacao_inicial-->|Respondeu|Identificar_tipo_chamado(Identificar tipo\nda demanda):::Atendente
-    Identificar_tipo_chamado --> Classificar_incidente{Incidente}:::Atendente
-    Identificar_tipo_chamado --> Classificar_ocorrencia{Ocorrência}:::Atendente
+    saudacao_inicial-->|Respondeu|Identificar_tipo_chamado{É Ocorrência?}:::Atendente
+    Identificar_tipo_chamado --> Classificar_incidente{NÃO}:::Atendente
+    Identificar_tipo_chamado --> Classificar_ocorrencia{SIM}:::Atendente
     Classificar_incidente --> Trote(Trote):::Link
     Classificar_incidente --> Prestacao_informacoes(Prestação de\nInformações):::Link
     Classificar_incidente --> Agradecimento(Agradecimento):::Link
@@ -34,7 +34,7 @@ graph TD;
     classDef Link fill:#33d, color:#fff
 
     click Trote "#trote" "Trote"
-    click Mudo "#mudo" "Mudo"
+    click Mudo "#mudo-ou-queda-de-ligação" "Mudo ou QUeda de Ligação"
     click Agradecimento "#agradecimento" "Agradecimento"
     click Prestacao_informacoes "#prestação-de-informações" "Prestação de Informações"
     click Classificar_ocorrencia "#ocorrência" "Ocorrência"

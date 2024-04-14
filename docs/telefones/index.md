@@ -19,9 +19,9 @@ sidebar_position: 4
 | PCDF |  - | 197 |✅|
 | PMDF |  - | 190 |✅|
 | SAMU |  - | 192 |✅|
-| OUVIDORIA | - | 162✅|
-| NEOENERGIA |  - | 116 ✅||
-| BANCO DE LEITE | - | 160 (Opção 4) |✅|
+| OUVIDORIA | - | 162|✅|
+| NEOENERGIA |  - | 116 |✅|
+| BANCO DE LEITE | - | 160<br/>(Opção 4) |✅|
 | ZOONOSES |  - | 20171342<br/>20171343 |✅| 
 | CAPTURA DE ANIMAL DE GRANDE PORTE |  - | 992847803<br/>983250369 | ✅|
 | CAPTURA DE ANIMAL MORTO |  - | 32130178 | ✅|

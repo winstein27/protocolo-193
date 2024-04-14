@@ -4,13 +4,14 @@ sidebar_position: 14
 
 # Atendimento Pré-Hospitalar
 
-```mermaid
+{/* ```mermaid
 flowchart TD
     A0(Identificar Naturezas):::atendente-->A1(Identificar quantidade de vítimas):::atendente
     A1-->A["''A pessoa se mexe ou\nestá de olho aberto?''"] -->|Não|B["''Por favor, chame-a em voz alta ou toque nela.\nEla responde, se movimenta\nou abre o olho?''"]
-    B -->|Sim|C["''Como está a respiração?''"]
-    A -->|Sim|C
-    B ---->|Não|B1(Cadastrar ocorrência):::atendente
+    B -->|Sim|B01(Classificar paciente\ncomo CONSCIENTE):::atendente -->C["''Como está a respiração?''"]
+    A -->|Sim|B01
+    B -->|Não|B02(Classificar paciente\ncomo INCONSCIENTE):::atendente --> C
+    B1(Cadastrar ocorrência):::atendente
     B1 --> B2(Encaminhar para CBMDF e SAMU):::atendente
     B2 --> D("Iniciar Protocolo Parada\nCardiorespiratória"):::link
     C ---->|Não\nRespira|B1
@@ -22,8 +23,31 @@ flowchart TD
     G -->|Sim|H(Aval do Coordenador de Operações):::atendente
     H -->|Sim|I(Cadastrar Ocorrência):::atendente
     H --->|Não|J(Encaminhar para SAMU):::atendente
-    I --->J
     G --->|Não|J
+
+    classDef atendente fill:#d66, color:#fff
+    classDef link fill:#33d, color:#fff
+
+    click D "/protocolo-193/operacoes/pcr" "Parada Cardiorrespiratória"
+    click F "/protocolo-193/operacoes/ovace" "OVACE"
+
+```  */}
+
+```mermaid
+flowchart TD
+    A["''Como está a vítima?''"]
+    A --> B{CONSCIENTE}:::atendente --> J(Verificar se ocorrência\npossui forte Valência Social\nou Institucional):::atendente
+    J -->|Sim|H(Aval do Coordenador de Operações):::atendente
+    H -->|Sim|I(Cadastrar Ocorrência):::atendente
+    H --->|Não|L(Encaminhar para SAMU):::atendente
+    A --> C{ENGASGADA}:::atendente -->F("Iniciar Protocolo OVACE"):::link
+    A --> D{RESPIRAÇÃO\nDIFÍCIL}:::atendente --> F
+    A --> E{INSCONSCIENTE}:::atendente --> G["''Ela respira?''"]
+    A --> M{NÃO\nRESPIRA}:::atendente --> K("Iniciar Protocolo Parada\nCardiorespiratória"):::link
+    G --> |Sim|J
+    G --> |Não|K
+    
+    
 
     classDef atendente fill:#d66, color:#fff
     classDef link fill:#33d, color:#fff
