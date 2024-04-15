@@ -1,41 +1,27 @@
-# Website
+# Protocolo de Atendimento e Despacho do CBMDF
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Este repositório contém informações sobre o Protocolo de Atendimento e Despacho do Corpo de Bombeiros Militar do Distrito Federal (CBMDF), que é responsável pela execução dos serviços de segurança contra incêndio e pânico, combate a incêndios, perícia de incêndio, busca e salvamento, atendimento pré-hospitalar, proteção do meio ambiente, emergência com produtos perigosos, defesa civil e prestação de socorros nos casos de sinistros, inundações, desabamentos, catástrofes, calamidades públicas e outros, onde as preservação da incolumidade das pessoas, do meio ambiente e do patrimônio é essencial.
 
-### Installation
+## Sobre o CBMDF
 
-```
-$ yarn
-```
+O Corpo de Bombeiros Militar do Distrito Federal é uma instituição dedicada à proteção e segurança da comunidade, atuando em diversas áreas, desde o combate a incêndios até o atendimento pré-hospitalar.
 
-### Local Development
+## Acionamento e Processo de Atendimento
 
-```
-$ yarn start
-```
+O acionamento dos serviços do CBMDF pela comunidade do Distrito Federal é realizado principalmente através do telefone 193, sendo um instrumento crucial para resposta rápida e eficaz às emergências.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+O processo de atendimento e despacho inicia-se a partir do acionamento e compreende ações que vão desde a recepção do pedido de socorro até o envio dos recursos para atender à ocorrência.
 
-### Build
+## Visão de Futuro e Protocolo
 
-```
-$ yarn build
-```
+Com o foco na prestação do serviço, o CBMDF estabeleceu como Visão de Futuro o atendimento às ocorrências emergenciais nos padrões internacionalmente reconhecidos. Nesse contexto, o Protocolo de Atendimento e Despacho é uma das entregas prioritárias para o alcance dessa visão, visando oferecer melhores serviços aos cidadãos do Distrito Federal.
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Contribuições
 
-### Deployment
+Este repositório está aberto para contribuições e sugestões que possam aprimorar o Protocolo de Atendimento e Despacho do CBMDF, garantindo assim um serviço cada vez mais eficiente e adaptado às necessidades da comunidade. 
 
-Using SSH:
+## Contato
 
-```
-$ USE_SSH=true yarn deploy
-```
+Para mais informações, entre em contato com o CBMDF pelos canais oficiais disponíveis. 
 
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+---

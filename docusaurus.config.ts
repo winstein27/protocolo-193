@@ -16,7 +16,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'munizigor', // Usually your GitHub org/user name.
-  projectName: 'pad', // Usually your repo name.
+  projectName: 'protocolo-193', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -43,14 +43,14 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/munizigor/pad/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/munizigor/protocolo-193/tree/main',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/munizigor/pad/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/munizigor/protocolo-193/tree/main',
         },
         theme: {
           customCss: './src/css/custom.css',
