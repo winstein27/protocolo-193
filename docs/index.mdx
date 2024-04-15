@@ -17,11 +17,14 @@ graph TD;
     Classificar_incidente --> Prestacao_informacoes(Prestação de\nInformações):::Link
     Classificar_incidente --> Agradecimento(Agradecimento):::Link
     Classificar_ocorrencia --> Coletar_relato(Colher breve relato da ocorrência\nno campo NARRATIVA):::Atendente
-    Coletar_relato --> Coletar_cidade(Identificar UF e Município):::Atendente
+    Coletar_relato --> Confirmar_telefone["Me confirme o seu telefone\nÉ o final 'XXXX'?"]
+    Confirmar_telefone --> |Sim|Corrigir_numero(Registrar Número):::Atendente
+    Confirmar_telefone --> |Não|Solicitar_numero[Informe o número correto\npor favor]
+    Solicitar_numero --> Corrigir_numero
+    Corrigir_numero --> Coletar_cidade[De qual cidade você está falando?]
     Coletar_cidade --> |Fora do DF|Transferir_ocorrencia(Transferir ocorrência para\noutra agência)
     Coletar_cidade --> |Dentro do DF|Registrar_endereco(Digitar o endereço completo\nno campo COMPLEMENTO):::Atendente
-    Registrar_endereco --> 
-    Identificar_grupos(Identificar\nNatureza):::Atendente
+    Registrar_endereco --> Identificar_grupos(Identificar\nNatureza):::Atendente
     Identificar_grupos --> Natureza_nao_atendida_pelo_CBMDF("Natureza não\natendida pelo CBMDF"):::Atendente
     Natureza_nao_atendida_pelo_CBMDF --> Transferir_ocorrencia:::Link
     Identificar_grupos --> Atendimento_pre_hospitalar(Atendimento\nPré-Hospitalar):::Link
@@ -110,11 +113,10 @@ graph TD
 
 ```mermaid
 graph TD
-    B(Identificar órgão responsável pela ocorrência):::atendente --> C["Senhor(a), essa ocorrência não é atendida\npelo CBMDF, mas vou pesquisar o número"]
+    B(Identificar órgão responsável pela ocorrência):::atendente --> C["Senhor(a), essa ocorrência não é atendida\npelo CBMDF. Aguarde um momento\nvamos fazer a transferência automática"]
     C --> D["Pesquisar telefone da Agência"]:::link
     D --> D01(Telefone permite transferência?):::atendente
-    D01 --> |Sim|D02["Vamos transferir automaticamente sua ligação\nPedimos que aguarde na linha 
-    e, caso a ligação caia, faça contato novamente"]
+    D01 --> |Sim|D02["Aguarde na linha, vamos lhe transferir\nCaso a ligação caia, faça contato novamente"]
     D02 --> D03(Copiar o telefone):::atendente
     D03 --> D1(Clicar em Transferir):::atendente
     D1 --> D2(Colar o telefone da Agência):::atendente

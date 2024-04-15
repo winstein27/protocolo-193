@@ -6,7 +6,8 @@ sidebar_position: 2
 ## Iniciar
 ```mermaid
 graph TD;
-    existe_outra_pessoa["Existe alguma outra pessoa no local?"]-->|Sim|pedir_fazer_procedimento["Peça pra que ela faça o procedimento\nque vou ditar"]
+    inicio[Vamos iniciar o procedimento de desobstrução\nVou ficar contigo até a chegada do socorro, ok?]
+    inicio --> existe_outra_pessoa["Existe alguma outra pessoa no local?"]-->|Sim|pedir_fazer_procedimento["Peça pra que ela faça o procedimento\nque vou ditar"]
     existe_outra_pessoa -->|Não| colocar_viva_voz["Coloque o telefone no Viva-Voz e \nsiga minhas orientações"]
     pedir_fazer_procedimento --> estimulo_tosse["Peça pra que a pessoa tente tossir\nIsso vai ajudar a expelir o objeto"]
     colocar_viva_voz --> estimulo_tosse

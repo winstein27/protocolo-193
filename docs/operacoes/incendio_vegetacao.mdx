@@ -17,7 +17,7 @@ graph TD;
     identificacao_origem --> |Não|ponto_referencia["Nos dê pontos de referência\npara chegarmos ao local"]
     registrar_origem --> ponto_referencia
     ponto_referencia --> registrar_pontos(Registrar Pontos de Referência):::atendente
-    registrar_pontos --> |Localização\nprecisa|orientacao_final["Não tente combater o incêndio, vamos\nenviar uma equipe para o local o quanto antes"]
+    registrar_pontos --> |Localização\nprecisa|orientacao_final["Não tente combater o incêndio, vamos\nenviar uma equipe para o quanto antes"]
     registrar_pontos --> |Localização\nimprecisa|ir_para_estrada["Pode ir para a estrada ou outro\nlugar onde possamos encontrá-lo facilmente?"]
     ir_para_estrada --> |Sim|levar_celular["OK, leve o celular contigo. Vamos\nenviar uma equipe o quanto antes"]
     ir_para_estrada --> |Não|orientacao_final
