@@ -8,8 +8,14 @@ sidebar_position: 18
 ```mermaid
 graph TD;
     existe_pessoa["Existem pessoas ou animais no local?"]-->|Sim|pedir_sair["Coloque todos em um local seguro"]
-    existe_pessoa -->|Não| ponto_referencia["Nos dê pontos de referência para chegarmos ao local"]
-    pedir_sair --> ponto_referencia
+    existe_pessoa -->|Não| ameaca_casa["O incêndio está próximo de residências?"]
+    pedir_sair --> ameaca_casa
+    ameaca_casa --> |Sim|registrar_risco_residencia(Registrar risco a residências):::atendente
+    ameaca_casa --> |Não|identificacao_origem["Foi possível identificar onde\niniciou ou quem provocou?"]
+    registrar_risco_residencia --> identificacao_origem
+    identificacao_origem --> |Sim|registrar_origem(Registrar ORIGEM e/ou\ninformações sobre o responsável):::atendente
+    identificacao_origem --> |Não|ponto_referencia["Nos dê pontos de referência\npara chegarmos ao local"]
+    registrar_origem --> ponto_referencia
     ponto_referencia --> registrar_pontos(Registrar Pontos de Referência):::atendente
     registrar_pontos --> |Localização\nprecisa|orientacao_final["Não tente combater o incêndio, vamos\nenviar uma equipe para o local o quanto antes"]
     registrar_pontos --> |Localização\nimprecisa|ir_para_estrada["Pode ir para a estrada ou outro\nlugar onde possamos encontrá-lo facilmente?"]
