@@ -73,7 +73,7 @@ const Metronome = () => {
   return (
     <div className="metronome">
       <h2>{formatTime(timer)}</h2>
-      <button onClick={startStopMetronome}>{isPlaying ? 'Parar' : 'Iniciar'}</button>
+      <button id="metronome_btn" onClick={startStopMetronome}>{isPlaying ? 'Parar' : 'Iniciar'}</button>
     </div>
   );
 };

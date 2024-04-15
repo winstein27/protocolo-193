@@ -1,10 +1,10 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Telefones de Serviço
 
-## Agências Externas
+## Bombeiros de Goiás
 
 | Unidade | Local                                  | Contato | PERMITE TRANSFERIR |
 |---------|----------------------------------------|---------|---------|
@@ -15,6 +15,19 @@ sidebar_position: 4
 | 20º BBM | ÁGUAS LINDAS | 36134938|✅|
 | 9º CIBM | PLANALTINA DE GOIÁS | 36378398|✅|
 | 26º CIBM | VALPARAÍSO / NOVO GAMA / OCIDENTAL |	36247409|✅|
+
+## Serviços de Animais
+| Unidade | Local   | Contato | PERMITE TRANSFERIR |
+|---------|---------|---------|--------------------|
+| CAPTURA DE ANIMAL DE GRANDE PORTE |  - | 992847803<br/>983250369 | ✅|
+| CAPTURA DE ANIMAL MORTO |  - | 32130178 | ✅|
+| CAPTURA DE ESCORPIÃO |  - | 34438817 | ✅|
+| HOSPITAL VETERINÁRIO UNB |  - | 31072801 | ✅|
+| ZOONOSES |  - | 20171342<br/>20171343 |✅| 
+
+## Outras Agências
+| Unidade | Local   | Contato | PERMITE TRANSFERIR |
+|---------|---------|---------|--------------------|
 | PRF | - | 191 |✅|
 | PCDF |  - | 197 |✅|
 | PMDF |  - | 190 |✅|
@@ -22,14 +35,9 @@ sidebar_position: 4
 | OUVIDORIA | - | 162|✅|
 | NEOENERGIA |  - | 116 |✅|
 | BANCO DE LEITE | - | 160<br/>(Opção 4) |✅|
-| ZOONOSES |  - | 20171342<br/>20171343 |✅| 
-| CAPTURA DE ANIMAL DE GRANDE PORTE |  - | 992847803<br/>983250369 | ✅|
-| CAPTURA DE ANIMAL MORTO |  - | 32130178 | ✅|
-| HOSPITAL VETERINÁRIO UNB |  - | 31072801 | ✅|
 | CONSELHO TUTELAR |  - | 32130657 | ✅|
 | DETRAN |  - | 154 | ✅|
 | METRÔ |  - | 33537000 |✅| 
-| CAPTURA DE ESCORPIÃO |  - | 34438817 | ✅|
 | CVV - CENTRO DE VALORIZAÇÃO DA VIDA |  - | 188 | ✅|
 
 
