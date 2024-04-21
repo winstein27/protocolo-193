@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Grid } from '@mui/material';
-import { YesNoField, SwitchField, AlertMessage, Narrativa, CustomTextField } from '@site/src/components/main';
+import { YesNoField, SwitchField, AlertMessage, Narrativa, CustomTextField } from '@site/src/components/structure';
 
 const Formulario = () => {
     const [state, setState] = useState({

@@ -3,9 +3,9 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Protocolo de Atendimento e Despacho',
-  tagline: 'Corpo de Bombeiros Militar do Distrito Federal',
-  favicon: 'img/brasao.png',
+  title: 'Protocolo Integrado de Atendimento a Emergências',
+  tagline: 'Governo do Distrito Federal',
+  favicon: 'img/brasao.jpg',
 
   // Set the production url of your site here
   url: 'https://munizigor.github.io',
@@ -61,19 +61,19 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/brasao.png',
+    image: 'img/brasao_df.png',
     navbar: {
-      title: 'Corpo de Bombeiros Militar do Distrito Federal',
+      title: 'Governo do Distrito Federal',
       logo: {
-        alt: 'Logo CBMDF',
-        src: 'img/brasao.png',
+        alt: 'Logo DF',
+        src: 'img/brasao_df.png',
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Protocolo de Atendimento e Despacho',
+          label: 'Protocolo Integrado de Atendimento a Emergências',
         },
         // {to: '/blog', label: 'Blog', position: 'left'},
         // {
@@ -126,7 +126,7 @@ const config: Config = {
         //   ],
         // },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} COCB - CBMDF`,
+      copyright: `Copyright © ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,
