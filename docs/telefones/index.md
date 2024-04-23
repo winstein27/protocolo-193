@@ -21,7 +21,7 @@ sidebar_position: 5
 |---------|---------|---------|--------------------|
 | CAPTURA DE ANIMAL DE GRANDE PORTE |  - | 992847803<br/>983250369 | ✅|
 | CAPTURA DE ANIMAL MORTO |  - | 32130178 | ✅|
-| CAPTURA DE ESCORPIÃO |  - | 34438817 | ✅|
+| CAPTURA DE ESCORPIÃO |  - | 160 | ✅|
 | HOSPITAL VETERINÁRIO UNB |  - | 31072801 | ✅|
 | ZOONOSES |  - | 20171342<br/>20171343 |✅| 
 
