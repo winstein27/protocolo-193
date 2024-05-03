@@ -2,8 +2,17 @@ import React, { useState } from 'react';
 import {
     Grid, Switch, FormControl, RadioGroup, Radio, FormControlLabel, FormLabel,
     TextField, IconButton, Alert, AlertTitle, FormGroup,
-    Select, MenuItem, Checkbox
+    Select, MenuItem, Checkbox,
+    TableContainer,
+    Table,
+    TableHead,
+    TableRow,
+    TableCell,
+    TableBody,
+    Tooltip
 } from '@mui/material';
+
+import cidadesData from '@site/src/static/js/cidades.json'
 
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 
@@ -24,7 +33,7 @@ export const CheckboxGroup = props => {
     return (
         <Grid item xs={12}>
             <FormControl component="fieldset">
-                <FormLabel component="legend">Selecione a Natureza do Atendimento</FormLabel>
+                <FormLabel component="legend">{props.legend}</FormLabel>
                 <FormGroup>
                     {props.options.map(option => (
                         <FormControlLabel
@@ -108,7 +117,15 @@ export const AlertMessage = props => {
     );
 };
 
-export const CustomTextField = ({ label, name, value, onChange }) => {
+export const CustomTextField = ({ label, name, value, onChange, copyIcon = false }) => {
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = () => {
+        const texto = value
+        navigator.clipboard.writeText(texto);
+        setCopied(true);
+    };
+
     return (
         <Grid item xs={12}>
             <FormLabel component="legend">{label}</FormLabel>
@@ -117,22 +134,27 @@ export const CustomTextField = ({ label, name, value, onChange }) => {
                 name={name}
                 value={value}
                 onChange={(e) => onChange(name, e.target.value)}
+                InputProps={
+                    copyIcon
+                        ? {
+                            endAdornment: (
+                                <IconButton onClick={handleCopy} aria-label="copy">
+                                    <Tooltip title={copied ? "Copiado!" : ""} placement="top">
+                                        <FileCopyIcon />
+                                    </Tooltip>
+                                </IconButton>
+                            )
+                        }
+                        : {}
+                }
             />
         </Grid>
     );
 };
 
 export const UfSelect = props => {
-    // Lista de UFs do Brasil
-    const ufs = [
-        'DF', 'GO', 'MG', 'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'ES', 'MA', 'MT',
-        'MS', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO',
-        'RR', 'SC', 'SP', 'SE', 'TO'
-    ];
-
-    const handleChange = (event) => {
-        props.onChange(event.target.value);
-    };
+    // Extrair as UFs do JSON
+    const ufs = Object.keys(cidadesData);
 
     return (
         <Grid item xs={12}>
@@ -146,6 +168,94 @@ export const UfSelect = props => {
                 >
                     {ufs.map((uf, index) => (
                         <MenuItem key={index} value={uf}>{uf}</MenuItem>
+                    ))}
+                </Select>
+            </FormControl>
+        </Grid>
+    );
+}
+
+export const CidadeSelect = props => {
+    // Extrair as cidades da UF selecionada
+    const cidades = cidadesData[props.uf] ? Object.keys(cidadesData[props.uf]) : [];
+
+    return (
+        <Grid item xs={12}>
+            <FormControl>
+                <FormLabel component="legend">{props.title}</FormLabel>
+                <Select
+                    labelId="cidade-select-label"
+                    id="cidade-select"
+                    value={props.value}
+                    onChange={(e) => props.onChange(props.name, e.target.value)}
+                >
+                    {cidades.map((cidade, index) => (
+                        <MenuItem key={index} value={cidade}>{cidade}</MenuItem>
+                    ))}
+                </Select>
+            </FormControl>
+        </Grid>
+    );
+}
+
+export const UnidadesTable = props => {
+    const [copied, setCopied] = useState(false);
+
+    const handleNumberCopy = (value) => {
+        navigator.clipboard.writeText(value);
+        setCopied(true);
+    };
+
+    const unidades = cidadesData[props.uf][props.cidade] ? cidadesData[props.uf][props.cidade]["Unidades"] : [];
+
+    return (
+        <Grid item xs={12}>
+            <TableContainer>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Unidade</TableCell>
+                            <TableCell>Contato</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {unidades.map((unidade, index) => (
+                            <TableRow key={index}>
+                                <TableCell>{unidade.Unidade}</TableCell>
+                                <TableCell>{unidade.Contato}
+                                    <IconButton onClick={() => handleNumberCopy(`${unidade.Contato}`)} aria-label="copy">
+                                        <Tooltip title={copied ? "Copiado!" : ""} placement="top">
+                                            <FileCopyIcon />
+                                        </Tooltip>
+
+                                    </IconButton>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </Grid>
+    );
+};
+
+export const UnidadeSelect = props => {
+    // Extrair as cidades da UF selecionada
+    const unidades = cidadesData[props.uf][props.cidade] ? cidadesData[props.uf][props.cidade]["Unidades"] : [];
+    console.log(unidades)
+
+    return (
+        <Grid item xs={12}>
+            <FormControl>
+                <FormLabel component="legend">{props.title}</FormLabel>
+                <Select
+                    labelId="cidade-select-label"
+                    id="cidade-select"
+                    value={props.value}
+                    onChange={(e) => props.onChange(props.name, e.target.value)}
+                >
+                    {unidades.map((cidade, index) => (
+                        <MenuItem key={index} value={cidade}>{cidade}</MenuItem>
                     ))}
                 </Select>
             </FormControl>
@@ -202,29 +312,18 @@ export const NumberTextField = ({ onChange }) => {
     );
 };
 
-export const Agencias = () => {
-    const options = [
-        { value: 'bombeiro', label: 'CBMDF', checked: true },
-        { value: 'samu', label: 'SAMU' },
-        { value: 'policia_militar', label: 'PMDF' },
-        { value: 'policia_civil', label: 'PCDF' },
-        { value: 'transito_urbano', label: 'DETRAN' },
-        { value: 'transito_rodovia', label: 'DER' },
-        { value: 'outros', label: 'Outros' }
-    ];
-
-    return <CheckboxGroup options={options} legend="Quais Agências podem atuar nessa ocorrência?" />;
-};
-
 export const Narrativa = props => {
+
+    const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {
         const narrativa = props.value
         navigator.clipboard.writeText(narrativa);
+        setCopied(true);
     };
 
     return (
-        <Grid item xs={12} sx={{ mt: 10 }}>
+        <Grid item xs={12}>
             <FormLabel component="legend">Copie o texto abaixo e insira na Narrativa</FormLabel>
             <TextField
                 sx={{
@@ -237,7 +336,9 @@ export const Narrativa = props => {
                     disabled: true,
                     endAdornment: (
                         <IconButton onClick={handleCopy} aria-label="copy">
-                            <FileCopyIcon />
+                            <Tooltip title={copied ? "Copiado!" : ""} placement="top">
+                                <FileCopyIcon />
+                            </Tooltip>
                         </IconButton>
                     ),
                 }}
@@ -245,3 +346,9 @@ export const Narrativa = props => {
         </Grid>
     );
 };
+
+export const EmConstrucao = props => {
+    return (
+        <AlertMessage severity="warning" title='Aba em Construção'>{props.message}</AlertMessage>
+    )
+}

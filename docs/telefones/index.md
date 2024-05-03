@@ -24,6 +24,7 @@ sidebar_position: 5
 | CAPTURA DE ESCORPIÃO |  - | 160 | ✅|
 | HOSPITAL VETERINÁRIO UNB |  - | 31072801 | ✅|
 | ZOONOSES |  - | 20171342<br/>20171343 |✅| 
+|Serviço Veterinário Público - HVEP | - | 156|✅| 
 
 ## Outras Agências
 | Unidade | Local   | Contato | PERMITE TRANSFERIR |

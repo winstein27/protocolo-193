@@ -6,27 +6,6 @@ sidebar_position: 1
 
 ![COCB](../../static/img/cocb.jpg)
 
-O [Corpo de Bombeiros Militar do Distrito Federal](https://www.cbm.df.gov.br/) é responsável
-pela execução dos serviços de segurança contra incêndio e pânico, combate a
-incêndios, perícia de incêndio, busca e salvamento, atendimento pré-hospitalar,
-proteção do meio ambiente, emergência com produtos perigosos, defesa civil e
-prestação de socorros nos casos de sinistros, inundações, desabamentos, catás-
-trofes, calamidades públicas e outros, em que seja necessária a preservação da
-incolumidade das pessoas, do meio ambiente e do patrimônio.
+Com o objetivo de otimizar o atendimento a emergências no Distrito Federal, foi estabelecido um Protocolo Integrado envolvendo o [Corpo de Bombeiros Militar do Distrito Federal](https://www.cbm.df.gov.br/) (CBMDF), a [Polícia Militar do Distrito Federal](https://www.pmdf.df.gov.br/) (PMDF) e o [Serviço de Atendimento Móvel de Urgência](https://www.saude.df.gov.br/samu-192-df) (SAMU). Esse protocolo visa coordenar de forma eficiente as ações em eventos que coloquem em risco a integridade das pessoas e do patrimônio. Através do acionamento centralizado, realizado pelos números de emergência 193, 190 e 192; as equipes especializadas são despachadas de maneira rápida e coordenada, garantindo uma resposta eficaz diante das mais diversas ocorrências.
 
-O acionamento desses serviços pela comunidade do Distrito Federal é realizado, principalmente, 
-pelo telefone 193, o que o torna um importante instrumento
-de resposta no atendimento às emergências.
-
-A partir do acionamento é iniciado o processo de atendimento e despacho, o
-qual consiste das ações que compreendem desde a recepção do pedido de socor-
-ro até o envio dos recursos para atender à ocorrência.
-
-Com o foco na prestação do serviço, o CBMDF estabeleceu como Visão de
-Futuro o atendimento às ocorrências emergenciais nos padrões internacionalmen-
-te consagrados.
-
-Esse Protocolo é uma das entregas estabelecidas como prioritárias para o
-alcance da Visão institucional no tocante ao serviço de atendimento e despacho
-de ocorrências, com vistas a ofertar melhores serviços aos cidadãos do Distrito
-Federal.
+Com base nos padrões internacionalmente reconhecidos, as corporações buscam estabelecer uma visão de futuro que priorize a excelência no atendimento às emergências. O protocolo integrado é uma das principais iniciativas para alcançar essa meta, possibilitando uma resposta ágil e coordenada em situações críticas. Essa integração de esforços representa um avanço significativo na prestação de serviços de segurança e socorro à população do Distrito Federal, demonstrando o compromisso das instituições em oferecer um atendimento de qualidade e eficiente em momentos de crise.

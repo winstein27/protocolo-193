@@ -126,7 +126,7 @@ const config: Config = {
         //   ],
         // },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()}`,
+      copyright: `Copyright © CBMDF-PMDF - ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,

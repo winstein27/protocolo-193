@@ -1,0 +1,80 @@
+[
+  {
+    "nome": "Obstrução de Vias aéreas por corpos estranhos (OVACE)",
+    "tags": [
+      "vitimas"
+    ],
+    "pesquisa": [
+      "Obstrução de Vias aéreas por corpos estranhos (OVACE)",
+      "engasgado",
+      "entalado"
+    ]
+  },
+  {
+    "nome": "Parada Respiratória",
+    "tags": [
+      "vitimas"
+    ],
+    "pesquisa": [
+      "Parada Respiratória"
+    ]
+  },
+  {
+    "nome": "Emergência Clínica",
+    "tags": [
+      "vitimas"
+    ],
+    "pesquisa": [
+      "desmaiada"
+    ]
+  },
+  {
+    "nome": "Captura de Insetos",
+    "tags": [
+      "vitimas",
+      "captura_inseto"
+    ],
+    "pesquisa": [
+      "Captura de Insetos",
+      "abelhas"
+    ]
+  },
+  {
+    "nome": "Colisão",
+    "tags": [
+      "vitimas",
+      "colisao_veiculo"
+    ],
+    "pesquisa": [
+      "Colisão",
+      "batida",
+      "veículo",
+      "carro"
+    ]
+  },
+  {
+    "nome": "Afogamento",
+    "tags": [
+      "vitimas",
+      "afogamento"
+    ],
+    "pesquisa": [
+      "afogamento",
+      "água"
+    ]
+  },
+  {
+    "nome": "Incêndio",
+    "tags": [
+      "vitimas",
+      "afogamento"
+    ],
+    "pesquisa": [
+      "Incêndio",
+      "vegetação",
+      "edificação",
+      "conteiner",
+      "container"
+    ]
+  }
+]

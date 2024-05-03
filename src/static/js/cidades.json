@@ -1,0 +1,139 @@
+{
+  "DF": {
+    "Água Quente": [],
+    "Arapoanga": [],
+    "Águas Claras": [],
+    "Arniqueira": [],
+    "Brazlândia": [],
+    "Candangolândia": [],
+    "Ceilândia": [],
+    "Cruzeiro": [],
+    "Fercal": [],
+    "Gama": [],
+    "Guará": [],
+    "Itapoã": [],
+    "Jardim Botânico": [],
+    "Lago Norte": [],
+    "Lago Sul": [],
+    "Núcleo Bandeirante": [],
+    "Paranoá": [],
+    "Park Way": [],
+    "Planaltina": [],
+    "Plano Piloto": [],
+    "Recanto das Emas": [],
+    "Riacho Fundo": [],
+    "Riacho Fundo II": [],
+    "Samambaia": [],
+    "Santa Maria": [],
+    "São Sebastião": [],
+    "SCIA/Estrutural": [],
+    "SIA": [],
+    "Sobradinho": [],
+    "Sobradinho II": [],
+    "Sol Nascente e Pôr do Sol": [],
+    "Sudoeste/Octogonal": [],
+    "Taguatinga": [],
+    "Varjão": [],
+    "Vicente Pires": []
+  },
+  "GO": {
+    "Águas Lindas de Goiás": {
+      "Unidades": [
+        {
+          "Unidade": "20º BBM",
+          "Contato": "36134938",
+          "Permite Transferir": true
+        }
+      ]
+    },
+    "Alexânia": {
+      "Unidades": []
+    },
+    "Cidade Ocidental": {
+      "Unidades": [
+        {
+          "Unidade": "26º CIBM",
+          "Contato": "36247409",
+          "Permite Transferir": true
+        }
+      ]
+    },
+    "Cocalzinho de Goiás": {
+      "Unidades": []
+    },
+    "Cristalina": {
+        "Unidades": [
+          {
+            "Unidade": "8º BBM",
+            "Contato": "36125360",
+            "Permite Transferir": true
+          }
+        ]
+    },
+    "Formosa": {
+      "Unidades": [
+        {
+          "Unidade": "19º BBM",
+          "Contato": "36613920",
+          "Permite Transferir": true
+        }
+      ]
+    },
+    "Novo Gama": {
+      "Unidades": [
+        {
+          "Unidade": "26º CIBM",
+          "Contato": "36247409",
+          "Permite Transferir": true
+        }
+      ]
+    },
+    "Padre Bernardo": {
+      "Unidades": []
+    },
+    "Valparaíso de Goiás": {
+      "Unidades": [
+        {
+          "Unidade": "26º CIBM",
+          "Contato": "36247409",
+          "Permite Transferir": true
+        }
+      ]
+    },
+    "Planaltina de Goiás": {
+      "Unidades": [
+        {
+          "Unidade": "9º CIBM",
+          "Contato": "36378398",
+          "Permite Transferir": true
+        }
+      ]
+    },
+    "Santo Antônio do Descoberto":{
+      "Unidades": [
+        {
+          "Unidade": "3º BBM",
+          "Contato": "36061649",
+          "Permite Transferir": true
+        }
+      ]
+    },
+    "Luziânia": {
+      "Unidades": [
+        {
+          "Unidade": "5º BBM",
+          "Contato": "36224222",
+          "Permite Transferir": false
+        }
+      ]
+    }
+  },
+  "MG": {
+    "Unaí": {
+      "Unidades": []
+    },
+    "Buritis": {
+      "Unidades": []
+    }
+  }
+}
