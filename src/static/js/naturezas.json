@@ -5,18 +5,34 @@
       "vitimas"
     ],
     "pesquisa": [
-      "Obstrução de Vias aéreas por corpos estranhos (OVACE)",
+      "obstrucao",
+      "ovace",
+      "vias",
+      "aereas",
+      "corpo",
+      "estranho",
       "engasgado",
-      "entalado"
+      "entalado",
+      "engasgada",
+      "entalada",
+      "respira"
     ]
   },
   {
-    "nome": "Parada Respiratória",
+    "nome": "Parada Cardiorrespiratória",
     "tags": [
       "vitimas"
     ],
     "pesquisa": [
-      "Parada Respiratória"
+      "parada respiratoria",
+      "cardiorrespiratoria",
+      "cardiorespiratoria",
+      "cardiaca",
+      "coracao",
+      "desmaiou",
+      "desmaiada",
+      "desmaiado",
+      "respira"
     ]
   },
   {
@@ -25,13 +41,36 @@
       "vitimas"
     ],
     "pesquisa": [
+      "desmaiada",
+      "passando mal",
+      "enjoada",
       "desmaiada"
+    ]
+  },
+  {
+    "nome": "Emergência Psiquiátrica",
+    "tags": [
+      "vitimas"
+    ],
+    "pesquisa": [
+      "surto",
+      "psicotica",
+      "psicotico",
+      "alucinacao",
+      "crise",
+      "epilepsia",
+      "surtada",
+      "psiquiatrico",
+      "psiquiatrica",
+      "depressao",
+      "esquizofrenico",
+      "esquizofrenica",
+      "esquizofrenia"
     ]
   },
   {
     "nome": "Captura de Insetos",
     "tags": [
-      "vitimas",
       "captura_inseto"
     ],
     "pesquisa": [
@@ -42,39 +81,131 @@
   {
     "nome": "Colisão",
     "tags": [
-      "vitimas",
       "colisao_veiculo"
     ],
     "pesquisa": [
-      "Colisão",
+      "colisao",
+      "colidiram",
+      "bateu",
+      "bateram",
       "batida",
-      "veículo",
-      "carro"
+      "veiculo",
+      "carros",
+      "moto",
+      "poste"
     ]
   },
   {
     "nome": "Afogamento",
     "tags": [
-      "vitimas",
       "afogamento"
     ],
     "pesquisa": [
       "afogamento",
-      "água"
+      "afogado",
+      "afogada",
+      "afogou",
+      "corrego",
+      "agua",
+      "piscina",
+      "rio",
+      "lago"
     ]
   },
   {
-    "nome": "Incêndio",
+    "nome": "Incêndio em Vegetação",
     "tags": [
-      "vitimas",
-      "afogamento"
+      "incendio_vegetacao"
     ],
     "pesquisa": [
-      "Incêndio",
-      "vegetação",
-      "edificação",
-      "conteiner",
-      "container"
+      "incendio",
+      "fogo",
+      "chamas",
+      "incendiado",
+      "vegetacao",
+      "matos",
+      "matagal",
+      "florestas",
+      "parques"
+    ]
+  },
+  {
+    "nome": "Incêndio em Veículo",
+    "tags": [
+      "incendio_veiculo"
+    ],
+    "pesquisa": [
+      "incendio",
+      "fogo",
+      "chamas",
+      "incendiado",
+      "veiculos",
+      "carros",
+      "onibus",
+      "motos",
+      "bicicletas"
+    ]
+  },
+  {
+    "nome": "Queda da Própria Altura",
+    "tags": [
+      "queda_propria_altura"
+    ],
+    "pesquisa": [
+      "queda",
+      "caiu",
+      "cabeca",
+      "tropecou",
+      "machucou",
+      "lesao",
+      "lesionou"
+    ]
+  },
+  {
+    "nome": "Queda de Veículo",
+    "tags": [
+      "queda_veiculo"
+    ],
+    "pesquisa": [
+      "queda",
+      "caiu",
+      "cabeca",
+      "tropecou",
+      "machucou",
+      "lesao",
+      "lesionou",
+      "veiculos",
+      "carros",
+      "onibus",
+      "motos",
+      "bicicletas"
+    ]
+  },
+  {
+    "nome": "Violência Doméstica",
+    "tags": [
+      "violencia_domestica"
+    ],
+    "pesquisa": [
+      "violencia",
+      "domestica",
+      "agressao",
+      "agredida",
+      "feminicidio",
+      "mulher",
+      "filha",
+      "marido",
+      "esposa",
+      "lanche",
+      "salgado",
+      "pizza",
+      "piza",
+      "sanduiche",
+      "xis",
+      "cento",
+      "hamburguer",
+      "comida",
+      "entrega"
     ]
   }
 ]

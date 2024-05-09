@@ -53,7 +53,7 @@
       "Unidades": [
         {
           "Unidade": "26º CIBM",
-          "Contato": "36247409",
+          "Contato": "36245210",
           "Permite Transferir": true
         }
       ]
@@ -62,13 +62,13 @@
       "Unidades": []
     },
     "Cristalina": {
-        "Unidades": [
-          {
-            "Unidade": "8º BBM",
-            "Contato": "36125360",
-            "Permite Transferir": true
-          }
-        ]
+      "Unidades": [
+        {
+          "Unidade": "8º BBM",
+          "Contato": "36125852",
+          "Permite Transferir": true
+        }
+      ]
     },
     "Formosa": {
       "Unidades": [
@@ -83,7 +83,7 @@
       "Unidades": [
         {
           "Unidade": "26º CIBM",
-          "Contato": "36247409",
+          "Contato": "36245210",
           "Permite Transferir": true
         }
       ]
@@ -95,7 +95,7 @@
       "Unidades": [
         {
           "Unidade": "26º CIBM",
-          "Contato": "36247409",
+          "Contato": "36245210",
           "Permite Transferir": true
         }
       ]
@@ -104,12 +104,12 @@
       "Unidades": [
         {
           "Unidade": "9º CIBM",
-          "Contato": "36378398",
+          "Contato": "36377678",
           "Permite Transferir": true
         }
       ]
     },
-    "Santo Antônio do Descoberto":{
+    "Santo Antônio do Descoberto": {
       "Unidades": [
         {
           "Unidade": "3º BBM",
@@ -121,8 +121,8 @@
     "Luziânia": {
       "Unidades": [
         {
-          "Unidade": "5º BBM",
-          "Contato": "36224222",
+          "Unidade": "26º CIBM",
+          "Contato": "36245210",
           "Permite Transferir": false
         }
       ]

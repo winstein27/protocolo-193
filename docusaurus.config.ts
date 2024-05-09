@@ -4,8 +4,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Protocolo Integrado de Atendimento a Emergências',
-  tagline: 'Governo do Distrito Federal',
-  favicon: 'img/brasao.jpg',
+  tagline: 'Corpo de Bombeiros Militar do Distrito Federal',
+  favicon: 'img/brasao.png',
 
   // Set the production url of your site here
   url: 'https://munizigor.github.io',
@@ -63,10 +63,10 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/brasao_df.png',
     navbar: {
-      title: 'Governo do Distrito Federal',
+      title: 'Corpo de Bombeiros Militar do Distrito Federal',
       logo: {
-        alt: 'Logo DF',
-        src: 'img/brasao_df.png',
+        alt: 'Logo CBMDF',
+        src: 'img/brasao.png',
       },
       items: [
         {
@@ -126,7 +126,7 @@ const config: Config = {
         //   ],
         // },
       ],
-      copyright: `Copyright © CBMDF-PMDF - ${new Date().getFullYear()}`,
+      copyright: `Copyright © CBMDF - ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,

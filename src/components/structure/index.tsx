@@ -9,8 +9,11 @@ import {
     TableRow,
     TableCell,
     TableBody,
-    Tooltip
+    Tooltip,
+    Autocomplete
 } from '@mui/material';
+
+import MaskedInput from 'react-text-mask';
 
 import cidadesData from '@site/src/static/js/cidades.json'
 
@@ -95,8 +98,6 @@ export const AlertMessage = props => {
 
     const getTitle = () => {
         switch (props.severity) {
-            case "info":
-                return "Informe ao solicitante";
             case "error":
                 return "Registre no sistema";
             default:
@@ -289,30 +290,54 @@ export const SelectNumber = ({ start = 0, end = 1, defaultNumber = 0, onChange }
     );
 };
 
-export const NumberTextField = ({ onChange }) => {
-    const [quantity, setQuantity] = useState(0);
+// export const NumberTextField = props => {
+//     const [quantity, setQuantity] = useState(0);
 
-    const handleChange = (event) => {
-        const value = parseInt(event.target.value);
-        setQuantity(value);
-        onChange(value);
-    };
+//     const handleChange = (event) => {
+//         const value = parseInt(event.target.value);
+//         setQuantity(value);
+//         props.onChange(value);
+//     };
 
-    return (
-        <Grid item xs={12}>
-            <TextField
-                label="Quantidade de Vítimas"
-                name="quantidade_vitimas"
-                type="number"
-                value={quantity}
-                onChange={handleChange}
-                fullWidth
-            />
-        </Grid>
-    );
-};
+//     return (
+//         <Grid item xs={12}>
+//             <TextField
+//                 label="Quantidade de Vítimas"
+//                 name="quantidade_vitimas"
+//                 type="number"
+//                 value={quantity}
+//                 onChange={handleChange}
+//                 fullWidth
+//             />
+//         </Grid>
+//     );
+// };
 
-export const Narrativa = props => {
+// export const NumberInput = props => {
+//     const [value, setValue] = useState(1);
+
+//     const handleChange = (event) => {
+//         const inputValue = event.target.value;
+//         // Verifica se o valor inserido é um número
+//         //TODO: Ainda não valida números
+//         if (!isNaN(inputValue)) {
+//             setValue(inputValue);
+//         }
+//     };
+
+//     return (
+//         <TextField
+//             type="number"
+//             value={props.value}
+//             onChange={handleChange}
+//             InputLabelProps={{
+//                 shrink: true,
+//             }}
+//         />
+//     );
+// }
+
+export const InputCopy = props => {
 
     const [copied, setCopied] = useState(false);
 
@@ -324,7 +349,7 @@ export const Narrativa = props => {
 
     return (
         <Grid item xs={12}>
-            <FormLabel component="legend">Copie o texto abaixo e insira na Narrativa</FormLabel>
+            <FormLabel component="legend">{props.field}</FormLabel>
             <TextField
                 sx={{
                     backgroundColor: 'rgba(0, 255, 0, 0.1)',
@@ -352,3 +377,24 @@ export const EmConstrucao = props => {
         <AlertMessage severity="warning" title='Aba em Construção'>{props.message}</AlertMessage>
     )
 }
+
+export const TelefoneTextField = (props) => {
+    const { onChange, value, name, ...rest } = props;
+
+    // Função para determinar a máscara com base no número de dígitos
+    const getMask = (value) => {
+        const isCelular = value.length > 10; // Se tiver mais de 10 dígitos, consideramos um celular
+        return isCelular ? ['(', /\d/, /\d/, ')', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/] : ['(', /\d/, /\d/, ')', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+    };
+
+    return (
+        <MaskedInput
+            mask={getMask}
+            guide={false} // Se você quiser que os caracteres não digitados sejam exibidos como espaços reservados, defina como true
+            onChange={onChange}
+            value={value}
+            name={name}
+            {...rest}
+        />
+    );
+};

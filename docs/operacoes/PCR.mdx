@@ -8,8 +8,7 @@ import Metronome from '@site/src/components/Metronome';
 ## Iniciar
 ```mermaid
 graph TD;
-    inicio[Vamos iniciar o procedimento de reanimação\nVou ficar contigo até a chegada do socorro, ok?]
-    inicio --> existe_outra_pessoa[Existe alguma outra pessoa no local?]-->|Sim|pedir_fazer_procedimento[Peça pra que ela faça o procedimento\nque vou ditar]
+    existe_outra_pessoa[Existe alguma outra pessoa no local?]-->|Sim|pedir_fazer_procedimento[Peça pra que ela faça o procedimento\nque vou ditar]
     pedir_fazer_procedimento --> pedir_revezamento[Peça também para que as pessoas em volta se\npreparem para revezar daqui a dois minutos]
     existe_outra_pessoa -->|Não| colocar_viva_voz[Coloque o telefone no Viva-Voz e \nsiga minhas orientações]
     pedir_revezamento --> deitar_paciente[Deite o paciente no chão com a barriga para cima\nem uma superfície rígida]
@@ -26,7 +25,7 @@ graph TD;
     posicionar_adulto --> orientacao_boca_boca[Não faça respiração boca-a-boca]
     posicionar_bebe --> orientacao_boca_boca
     orientacao_boca_boca --> orientacao_compressoes[Faça compressões fortes]
-    orientacao_compressoes --> orientar_compressoes[Vou começar a bater palmas e você vai\nfazer as compressões no ritmo delas\nSão 110 compressões por minuto]
+    orientacao_compressoes --> orientar_compressoes[Vou começar a bater palmas e você vai\nfazer as compressões no ritmo delas\nSão 110 compressões por minuto sem parar]
     orientar_compressoes --> abrir_metronomo(Inicie o metrônomo abaixo):::atendente
 
     classDef atendente fill:#d66, color:#fff

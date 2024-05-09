@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Grid } from '@mui/material';
-import { YesNoField, SwitchField, AlertMessage, Narrativa, CustomTextField } from '@site/src/components/structure';
+import { YesNoField, SwitchField, AlertMessage, InputCopy, CustomTextField } from '@site/src/components/structure';
 
 const Formulario = () => {
     const [state, setState] = useState({
@@ -71,7 +71,7 @@ Solicitante orientado a ir para ponto de melhor localização?: ${irEstrada ? 'S
                 {irEstrada ? "OK, leve o celular contigo. Vamos enviar uma equipe o quanto antes" : "OK, permaneça em local seguro e não tente combater o incêndio. Vamos enviar uma equipe o quanto antes"}
             </AlertMessage>
 
-            <Narrativa value={narrativa} />
+            <InputCopy field="Narrativa" value={narrativa} />
         </Grid>
     );
 };

@@ -10,11 +10,11 @@ sidebar_position: 5
 |---------|----------------------------------------|---------|---------|
 | 3º BBM | SANTO ANTÔNIO DO DESCOBERTO | 36061649|✅|
 | 5º BBM | LUZIÂNIA | 36224222|❌<br/>(Apenas Whatsapp)|
-| 8º BBM | CRISTALINA | 36125360|✅|
-| 19º BBM | FORMOSA | 36613920|✅|
+| 8º BBM | CRISTALINA | 36125852|✅|
+| 19º BBM | FORMOSA | 36313920|✅|
 | 20º BBM | ÁGUAS LINDAS | 36134938|✅|
-| 9º CIBM | PLANALTINA DE GOIÁS | 36378398|✅|
-| 26º CIBM | VALPARAÍSO / NOVO GAMA / OCIDENTAL |	36247409|✅|
+| 9º CIBM | PLANALTINA DE GOIÁS | 36377678|✅|
+| 26º CIBM | VALPARAÍSO / NOVO GAMA / OCIDENTAL |	36245210|✅|
 
 ## Serviços de Animais
 | Unidade | Local   | Contato | PERMITE TRANSFERIR |
