@@ -342,7 +342,7 @@ const Formulario = () => {
                                                 <Grid> */}
                                             <AlertMessage severity="info" title='"Tem algum ponto de referência ou complemento?"'></AlertMessage>
                                             <CustomTextField label="Ponto de referência" name="pontoReferencia" value={pontoReferencia} onChange={handleChange} />
-                                            <AlertMessage severity="info" title='"Um momento, estamos enviando a ocorrência para o socorro mais próximo"' />
+                                            <AlertMessage severity="info" title='"Um momento, vamos enviar a ocorrência para o socorro mais próximo"' />
                                             <AlertMessage severity="error" title="Copie o endereço abaixo"></AlertMessage>
                                             <InputCopy field="Endereço" value={`${endereco.toUpperCase()} - ${cidadeOcorrencia.toUpperCase()} - ${ufOcorrencia}`} />
                                             <AlertMessage severity="error" title="Cole o endereço na aba de PESQUISA do Google Maps"></AlertMessage>
