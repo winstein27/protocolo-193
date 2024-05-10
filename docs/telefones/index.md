@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Telefones de Serviço
 
-## Bombeiros de Goiás
+## Bombeiros de Goiàs
 
 | Unidade | Local                                  | Contato | PERMITE TRANSFERIR |
 |---------|----------------------------------------|---------|---------|
@@ -13,22 +13,22 @@ sidebar_position: 5
 | 8º BBM | CRISTALINA | 36125852|✅|
 | 19º BBM | FORMOSA | 36313920|✅|
 | 20º BBM | ÁGUAS LINDAS | 36134938|✅|
-| 9º CIBM | PLANALTINA DE GOIÁS | 36377678|✅|
+| 9º CIBM | PLANALTINA DE GOIàs | 36377678|✅|
 | 26º CIBM | VALPARAÍSO / NOVO GAMA / OCIDENTAL |	36245210|✅|
 
 ## Serviços de Animais
 | Serviço | Orgão | Contato | Horário de Atendimento | Endereço |
 | --- | --- | --- | --- | --- |
-| CAPTURA DE ANIMAL DE GRANDE PORTE ERRANTES (Cavalos, Vacas) | SEAGRI-DF | 3447-8019 <br/> 3247-2338 <br/> 981992459 (Mensagen- Zap) | 08:00 ás 12:00 <br/> e <br/> 13:00 ás 17:00 | STN – ASA NORTE BSB-DF |
-| ANIMAIS MORTOS | SLU- Ouvidoria | 3213-0153 <br/> 3213-0178 | 08:00 ás 19:00 | Venâncio 2.000 SHS Quadra: 01 |
-| ANIMAIS MORTOS | SLU - Delsimar | 99304-2059 | 07:00 ás 20:00 | Recanto, Lago Sul, Riacho Fundo, São Sebastião, Vicente Pires |
-| ANIMAIS MORTOS | SLU - Valdemir | 99427-4502 | 07:00 ás 18:00 | Região Leste |
-| ANIMAIS MORTOS | SLU - LÚCIO | 99253-2725 | 07:00 ás 18:00 | Plano Piloto |
-| ANIMAIS MORTOS | SLU – Cláudio | 99265-9531 | 07:00 ás 18:00 | Taguatinga, Ceilândia, Samambaia e Braslândia |
-| CÃES, POMBOS, RATOS, MORCEGOS (Vacinação, Infestação, Observação) | ZOONOSE | 3449-4434 | 07:00 ás 17:00 | SAIN Lote: 04 ASA NORTE -BSB |
-| CÃES e GATOS (Consulta, Exames, Cirurgia, Internação) | HOSPITAL VETERINÁRIO DE TAGUATINGA -DF | 99670-O897, 156 | 08:00 ás 17:00 | Parque Largo do Cortado –Taguatinga – DF (Prox. ao SESI) |
-| CÃES, GATOS e SILVESTRES | HOSPITAL VETERINÁRIO DA UNB | 3107-2801 <br/> 2017-1347 | Segunda à Sexta <br/> 07:00 ás 23:00 <br/> Sábado <br/> 08:00 às 18:00 | L4 Norte ASA NORTE- BSB |
-| CÃES e GATOS (Castração, Encaminhamento para o Hospital Veterinário) | SUPAN/SEMA-DF | 2141-5846 <br/> 98199-2410 (ZAP) | 08:00 ás 18:00 |  |
+| CAPTURA DE ANIMAL DE GRANDE PORTE ERRANTES (Cavalos, Vacas) | SEAGRI-DF | 3447-8019<br/>3247-2338<br/>981992459(WhatsApp) | 08:00 às 12:00 <br/>13:00 às 17:00 | STN – ASA NORTE BSB-DF |
+| ANIMAIS MORTOS | SLU- Ouvidoria | 3213-0153<br/>3213-0178 | 08:00 às 19:00 | Venâncio 2000<br/>SHS Quadra 01 |
+| ANIMAIS MORTOS | SLU - Delsimar | 99304-2059 | 07:00 às 20:00 | Recanto, Lago Sul, Riacho Fundo, São Sebastião, Vicente Pires |
+| ANIMAIS MORTOS | SLU - Valdemir | 99427-4502 | 07:00 às 18:00 | Região Leste |
+| ANIMAIS MORTOS | SLU - LÚCIO | 99253-2725 | 07:00 às 18:00 | Plano Piloto |
+| ANIMAIS MORTOS | SLU – Cláudio | 99265-9531 | 07:00 às 18:00 | Taguatinga, Ceilândia, Samambaia e Brazlândia |
+| CÃES, POMBOS, RATOS, MORCEGOS (Vacinação, Infestação, Observação) | ZOONOSE | 3449-4434 | 07:00 às 17:00 | SAIN Lote 04 ASA NORTE -BSB |
+| CÃES e GATOS (Consulta, Exames, Cirurgia, Internação) | HOSPITAL VETERINÁRIO DE TAGUATINGA -DF | 99670-0897<br/>156 | 08:00 às 17:00 | Parque Largo do Cortado – Taguatinga – DF (Prox. ao SESI) |
+| CÃES, GATOS e SILVESTRES | HOSPITAL VETERINÁRIO DA UNB | 3107-2801<br/>2017-1347 | Segunda à Sexta:<br/>07:00 às 23:00<br/><br/>Sábado:<br/>08:00 às 18:00 | L4 Norte ASA NORTE- BSB |
+| CÃES e GATOS (Castração, Encaminhamento para o Hospital Veterinário) | SUPAN/SEMA-DF | 2141-5846<br/>98199-2410(WhatsApp) | 08:00 às 18:00 |  |
 
 ## Outras Agências
 | Unidade | Local   | Contato | PERMITE TRANSFERIR |
