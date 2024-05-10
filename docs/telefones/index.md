@@ -17,14 +17,18 @@ sidebar_position: 5
 | 26º CIBM | VALPARAÍSO / NOVO GAMA / OCIDENTAL |	36245210|✅|
 
 ## Serviços de Animais
-| Unidade | Local   | Contato | PERMITE TRANSFERIR |
-|---------|---------|---------|--------------------|
-| CAPTURA DE ANIMAL DE GRANDE PORTE |  - | 992847803<br/>983250369 | ✅|
-| CAPTURA DE ANIMAL MORTO |  - | 32130178 | ✅|
-| CAPTURA DE ESCORPIÃO |  - | 160 | ✅|
-| HOSPITAL VETERINÁRIO UNB |  - | 31072801 | ✅|
-| ZOONOSES |  - | 20171342<br/>20171343 |✅| 
-|Serviço Veterinário Público - HVEP | - | 156|✅| 
+| Serviço | Orgão | Contato | Horário de Atendimento | Endereço |
+| --- | --- | --- | --- | --- |
+| CAPTURA DE ANIMAL DE GRANDE PORTE ERRANTES (Cavalos, Vacas) | SEAGRI-DF | 3447-8019 <br/> 3247-2338 <br/> 981992459 (Mensagen- Zap) | 08:00 ás 12:00 <br/> e <br/> 13:00 ás 17:00 | STN – ASA NORTE BSB-DF |
+| ANIMAIS MORTOS | SLU- Ouvidoria | 3213-0153 <br/> 3213-0178 | 08:00 ás 19:00 | Venâncio 2.000 SHS Quadra: 01 |
+| ANIMAIS MORTOS | SLU - Delsimar | 99304-2059 | 07:00 ás 20:00 | Recanto, Lago Sul, Riacho Fundo, São Sebastião, Vicente Pires |
+| ANIMAIS MORTOS | SLU - Valdemir | 99427-4502 | 07:00 ás 18:00 | Região Leste |
+| ANIMAIS MORTOS | SLU - LÚCIO | 99253-2725 | 07:00 ás 18:00 | Plano Piloto |
+| ANIMAIS MORTOS | SLU – Cláudio | 99265-9531 | 07:00 ás 18:00 | Taguatinga, Ceilândia, Samambaia e Braslândia |
+| CÃES, POMBOS, RATOS, MORCEGOS (Vacinação, Infestação, Observação) | ZOONOSE | 3449-4434 | 07:00 ás 17:00 | SAIN Lote: 04 ASA NORTE -BSB |
+| CÃES e GATOS (Consulta, Exames, Cirurgia, Internação) | HOSPITAL VETERINÁRIO DE TAGUATINGA -DF | 99670-O897, 156 | 08:00 ás 17:00 | Parque Largo do Cortado –Taguatinga – DF (Prox. ao SESI) |
+| CÃES, GATOS e SILVESTRES | HOSPITAL VETERINÁRIO DA UNB | 3107-2801 <br/> 2017-1347 | Segunda à Sexta <br/> 07:00 ás 23:00 <br/> Sábado <br/> 08:00 às 18:00 | L4 Norte ASA NORTE- BSB |
+| CÃES e GATOS (Castração, Encaminhamento para o Hospital Veterinário) | SUPAN/SEMA-DF | 2141-5846 <br/> 98199-2410 (ZAP) | 08:00 ás 18:00 |  |
 
 ## Outras Agências
 | Unidade | Local   | Contato | PERMITE TRANSFERIR |
