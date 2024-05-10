@@ -14,14 +14,14 @@ graph TD;
     verificar_idade --> |Menor de 1 ano|posicionar_bebe["Deite a criança de barriga pra\nbaixo no seu braço\nDeixe o nariz dela\nentre seus dedos"]
     verificar_idade --> |Entre 1 e 12 anos|posicionar_crianca["Fique atrás da criança\nde joelhos e a abrace\napoiando-a na sua coxa"]
     verificar_idade --> |Maior de 12 anos|posicionar_adulto["Fique atrás da pessoa e a abrace"]
-    posicionar_crianca --> posicionar_mao["Feche a mão, encoste o polegar dessa mão no umbigo\nda pessoa. Agora pegue a outra mão e abrace essa mão"]
+    posicionar_crianca --> posicionar_mao["Feche a mão, encoste o polegar dessa mão no umbigo\nda pessoa. Agora pegue a outra mão e abrace por cima essa mão"]
     posicionar_adulto --> posicionar_mao
     posicionar_mao --> movimentar_mao["Agora você vai comprimir a barriga em 5 movimentos rápidos\npra dentro e pra cima. Pense como se estivesse fazendo um 'J' com a mão"]
     movimentar_mao --> tapotagem_adulto["Depois dos 5 movimentos, você vai dar 5 tapas fortes nas\ncostas da pessoa, uns 4 dedos abaixo do pescoço"]
-    tapotagem_adulto --> alternar_manobras["Fique alternando 5 manobras e 5 tapas nas costas até a chegada do socorro"]
+    tapotagem_adulto --> alternar_manobras["Fique alternando 5 manobras em 'J' e 5 tapas nas costas até a chegada do socorro"]
     alternar_manobras --> verificar_paciente["Paciente está de olho aberto ou se mexendo?"]
     verificar_paciente --> |Sim|continuar_procedimento["Você está indo muito bem, não pare\nContinue assim, alternando os movimentos e\nos tapas nas costas até a chegada do socorro"]
-    continuar_procedimento --> movimentar_mao
+    continuar_procedimento --> verificar_paciente
     verificar_paciente --> |Não|iniciar_rcp["Então vamos iniciar as manobras de reanimação"]
     iniciar_rcp -->ir_para_rcp("Iniciar Protocolo RCP"):::link
 
@@ -30,7 +30,7 @@ graph TD;
     tapotagem_bebe --> compressao_bebe["Agora você vai pegar o outro braço e\napoiar o bebê nele de barriga cima\nAinda inclinado pra baixo, pegue 2 dedos\ne faça 5 compressões abaixo da linha do mamilo"]
     compressao_bebe --> verificar_bebe["O bebê está de olho aberto ou se mexendo?"]
     verificar_bebe --> |Sim|continuar_procedimento_bebe["Você está indo muito bem, não pare\nContinue assim, alternando os movimentos e\nos tapas nas costas até a chegada do socorro"]
-    continuar_procedimento_bebe --> tapotagem_bebe
+    continuar_procedimento_bebe --> verificar_bebe
     verificar_bebe --> |Não|iniciar_rcp
   
 

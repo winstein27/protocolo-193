@@ -8,7 +8,7 @@ sidebar_position: 6
 - Igor **MUNIZ** da Silva - Ten-Cel. QOBM/Comb.
 
 ## Polícia Militar do Distrito Federal
-- Katsuhiti Ricardo Gadelha **KOTAMA** - Ten-Cel. QOBM/Comb.
+- 
 
 ## Serviço de Atendimento Móvel de Urgência
 - 

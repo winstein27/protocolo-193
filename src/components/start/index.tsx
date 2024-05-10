@@ -155,33 +155,39 @@ const Formulario = () => {
         }
         else if (naturezaAgenciaBoolean) {
             narrativa += `OCORRÊNCIA DE ${naturezas.map(item => item.nome.toUpperCase()).join(', ')} NÃO ATENDIDA PELO CBMDF`;
-
         }
         else {
             // Verifica se há ocorrência emergencial e adiciona à narrativa, se houver
             if (ocorrenciaEmergencial) {
-                narrativa += '## OCORRÊNCIA EMERGENCIAL ##\n';
+                narrativa += '## OCORRÊNCIA EMERGENCIAL ##\n\n';
             }
 
             // Verifica se há protocolo emergencial e adiciona à narrativa, se houver
             if (protocoloEmergencialBoolean) {
-                narrativa += `## PROTOCOLO DE ${protocoloEmergencialNome.toUpperCase()} INICIADO PELA CENTRAL DE OPERAÇÕES  ##\n`;
+                narrativa += `## PROTOCOLO DE ${protocoloEmergencialNome.toUpperCase()} INICIADO PELA CENTRAL DE OPERAÇÕES  ##\n\n`;
+            }
+
+            if (ufOcorrencia !== "DF") {
+                narrativa += `Ocorrência fora da circunscrição\nTransferida para ${cidadeOcorrencia.toUpperCase()} - ${ufOcorrencia}\n\n`;
             }
 
             // Adiciona informações sobre as naturezas
-            narrativa += `\nNatureza(s): ${naturezas.map(item => item.nome.toUpperCase()).join(', ')}\n`;
+            narrativa += `Natureza(s): ${naturezas.map(item => item.nome.toUpperCase()).join(', ')}\n`;
 
             // Adiciona o relato
             narrativa += `Relato: ${descricao.toUpperCase()}\n`;
 
-            // Adiciona informações sobre o endereço e ponto de referência
-            narrativa += `Endereço: ${endereco.toUpperCase()} - ${cidadeOcorrencia.toUpperCase()} - ${ufOcorrencia}\n`;
-            if (pontoReferencia != '') {
-                narrativa += `Ponto de Referência: ${pontoReferencia.toUpperCase()}\n`;
-            }
+            if (ufOcorrencia == "DF") {
 
-            if (nomeSolicitante != '') {
-                narrativa += `Nome do Solicitante: ${nomeSolicitante.toUpperCase()}\n`;
+                // Adiciona informações sobre o endereço e ponto de referência
+                narrativa += `Endereço: ${endereco.toUpperCase()} - ${cidadeOcorrencia.toUpperCase()} - ${ufOcorrencia}\n`;
+                if (pontoReferencia != '') {
+                    narrativa += `Ponto de Referência: ${pontoReferencia.toUpperCase()}\n`;
+                }
+
+                if (nomeSolicitante != '') {
+                    narrativa += `Nome do Solicitante: ${nomeSolicitante.toUpperCase()}\n`;
+                }
             }
 
             if (telefoneSolicitanteNumber != '') {
@@ -312,7 +318,12 @@ const Formulario = () => {
                                     {(ufOcorrencia !== "DF" && cidadeOcorrencia !== '') &&
                                         <Grid>
                                             <AlertMessage severity="info" title={`Você ligou para o Distrito Federal, mas vamos lhe transferir 
-                                            para ${cidadeOcorrencia}. Aguarde na linha e, caso a ligação caia, faça contato novamente`}>
+                                            para ${cidadeOcorrencia}`}>
+                                            </AlertMessage>
+                                            {protocoloEmergencialBoolean &&
+                                                <AlertMessage severity="info" title={`Enquanto transferimos, vamos iniciar o protocolo de ${protocoloEmergencialNome} ok?`}></AlertMessage>
+                                            }
+                                            <AlertMessage severity="info" title={`Aguarde na linha e, caso a ligação caia, faça contato novamente`}>
                                             </AlertMessage>
                                             <AlertMessage severity="error" title="Clique abaixo para copiar o telefone da Unidade"></AlertMessage>
                                             <UnidadesTable value={cidadeOcorrencia} uf={ufOcorrencia} cidade={cidadeOcorrencia} title="Selecione a Unidade" name="unidadeTransferência" onChange={handleChange} />
@@ -320,11 +331,26 @@ const Formulario = () => {
                                             <AlertMessage severity="error" title="Cole o número da Unidade"></AlertMessage>
                                             <AlertMessage severity="error" title="Clique em TRANSFERÊNCIA ASSISTIDA"></AlertMessage>
                                             <AlertMessage severity="error" title="Aguarde o atendente na outra linha atender para desligar a chamada"></AlertMessage>
-                                            <EmConstrucao message="Se atendente da outra ponta não atender, cadastrar a ocorrência e enviar" />
-                                            <AlertMessage severity="error" title="No SINESPCAD, lance o número que efetuou a ligação no campo NÚMERO DO TELEFONE"></AlertMessage>
-                                            <AlertMessage severity="error" title="Classifique o atendimento como CHAMADA TRANSFERIDA no campo CLASSIFICAÇÃO DA CHAMADA"></AlertMessage>
-                                            <AlertMessage severity="error" title="Copie e Cole a Narrativa abaixo no campo NARRATIVA"></AlertMessage>
-                                            <InputCopy title="Narrativa" value={narrativa} />
+                                            {protocoloEmergencialBoolean &&
+                                                <a href={`operacoes/${protocoloEmergencialNome}`}>
+                                                    <Button
+                                                        size="large"
+                                                        variant="contained"
+                                                        color="error"
+                                                        startIcon={<LocalHospitalIcon />}
+                                                    >
+                                                        INICIAR PROTOCOLO {protocoloEmergencialNome}
+                                                    </Button>
+                                                </a>
+                                            }
+                                            {!protocoloEmergencialBoolean && <Grid>
+                                                <EmConstrucao message="Se atendente da outra ponta não atender, cadastrar a ocorrência e enviar" />
+                                                <AlertMessage severity="error" title="No SINESPCAD, lance o número que efetuou a ligação no campo NÚMERO DO TELEFONE"></AlertMessage>
+                                                <AlertMessage severity="error" title="Classifique o atendimento como CHAMADA TRANSFERIDA no campo CLASSIFICAÇÃO DA CHAMADA"></AlertMessage>
+                                                <AlertMessage severity="error" title="Copie e Cole a Narrativa abaixo no campo NARRATIVA"></AlertMessage>
+                                                <InputCopy title="Narrativa" value={narrativa} />
+                                            </Grid>
+                                            }
                                         </Grid>
                                     }
                                     {(ufOcorrencia === "DF" && cidadeOcorrencia !== '') &&
@@ -358,92 +384,93 @@ const Formulario = () => {
                                                 </Grid>
                                             } */}
 
-                                        </Grid>
-                                    }
-                                </Grid>
 
-                            }
 
-                            {// CADASTRO INICIAL
-                                <Grid>
-                                    <AlertMessage severity="error" title="Copie o texto abaixo"></AlertMessage>
-                                    <InputCopy field="Narrativa" value={narrativa + `\n## CADASTRO EM ANDAMENTO NA COCB - AGUARDE MAIS INFORMAÇÕES ##`} />
-                                    <AlertMessage severity="error" title="Cole no campo NARRATIVA"></AlertMessage>
-                                    <AlertMessage severity="error" title="Clique em 'ENCAMINHAR E CONTINUAR EDIÇÃO"></AlertMessage>
-                                </Grid>
-                            }
-                            {// INÍCIO DE PROTOCOLO CASO NATUREZA TENHA PROCEDIMENTOS (OVACE, PCR, PARTO, TENTTIVA DE SUICÍDIO)
-                                protocoloEmergencialBoolean &&
-                                <Grid>
-                                    <AlertMessage severity="info" title={`A ocorrência já foi cadastrada e o socorro será enviado. Vamos iniciar o protocolo de ${protocoloEmergencialNome} ok?`}></AlertMessage>
-                                    <a href={`operacoes/${protocoloEmergencialNome}`}>
-                                        <Button
-                                            size="large"
-                                            variant="contained"
-                                            color="error"
-                                            startIcon={<LocalHospitalIcon />}
-                                        >
-                                            INICIAR PROTOCOLO {protocoloEmergencialNome}
-                                        </Button>
-                                    </a>
-                                </Grid>
-                            }
 
-                            {// CASO NÃO HAJA PROTOCOLO EMERGENCIAL, SEGUIMOS COM O ATENDIMENTO
-                                !protocoloEmergencialBoolean &&
-                                <Grid>
-                                    <AlertMessage severity="info" title='"A ocorrência já foi cadastrada e encaminhada para a unidade mais próxima, ok? Agora vamos complementar alguns dados"'></AlertMessage>
-                                    {
-                                        // QUEM - INFORMAÇÕES DO SOLICITANTE
-                                        <Grid>
-                                            <AlertMessage severity="info" title='"Qual o seu nome?"'></AlertMessage>
-                                            <CustomTextField label="Nome do Solicitante" name="nomeSolicitante" value={nomeSolicitante} onChange={handleChange} />
-                                            <AlertMessage severity="info" title='"Seu telefone é o final "XXXX"?"'>Informe os 4 últimos dígitos</AlertMessage>
-                                            <YesNoField value={telefoneSolicitanteBoolean} onChange={(value) => handleChange("telefoneSolicitanteBoolean", value)} />
-                                            {!telefoneSolicitanteBoolean &&
+                                            {// CADASTRO INICIAL
                                                 <Grid>
-                                                    <AlertMessage severity="info" title='"Informe o número correto por favor"'></AlertMessage>
-
-                                                    {/* <TelefoneTextField name="telefoneSolicitanteNumber" value={telefoneSolicitanteNumber} onChange={handleChange} /> */}
-                                                    <CustomTextField label="Telefone do Solicitante" name="telefoneSolicitanteNumber" value={telefoneSolicitanteNumber} onChange={handleChange} />
+                                                    <AlertMessage severity="error" title="Copie o texto abaixo"></AlertMessage>
+                                                    <InputCopy field="Narrativa" value={narrativa + `\n## CADASTRO EM ANDAMENTO NA COCB - AGUARDE MAIS INFORMAÇÕES ##`} />
+                                                    <AlertMessage severity="error" title="Cole no campo NARRATIVA"></AlertMessage>
+                                                    <AlertMessage severity="error" title="Clique em 'ENCAMINHAR E CONTINUAR EDIÇÃO"></AlertMessage>
+                                                </Grid>
+                                            }
+                                            {// INÍCIO DE PROTOCOLO CASO NATUREZA TENHA PROCEDIMENTOS (OVACE, PCR, PARTO, TENTTIVA DE SUICÍDIO)
+                                                protocoloEmergencialBoolean &&
+                                                <Grid>
+                                                    <AlertMessage severity="info" title={`A ocorrência já foi cadastrada e o socorro será enviado. Vamos iniciar o protocolo de ${protocoloEmergencialNome} ok?`}></AlertMessage>
+                                                    <a href={`operacoes/${protocoloEmergencialNome}`}>
+                                                        <Button
+                                                            size="large"
+                                                            variant="contained"
+                                                            color="error"
+                                                            startIcon={<LocalHospitalIcon />}
+                                                        >
+                                                            INICIAR PROTOCOLO {protocoloEmergencialNome}
+                                                        </Button>
+                                                    </a>
                                                 </Grid>
                                             }
 
+                                            {// CASO NÃO HAJA PROTOCOLO EMERGENCIAL, SEGUIMOS COM O ATENDIMENTO
+                                                !protocoloEmergencialBoolean &&
+                                                <Grid>
+                                                    <AlertMessage severity="info" title='"A ocorrência já foi cadastrada e encaminhada para a unidade mais próxima, ok? Agora vamos complementar alguns dados"'></AlertMessage>
+                                                    {
+                                                        // QUEM - INFORMAÇÕES DO SOLICITANTE
+                                                        <Grid>
+                                                            <AlertMessage severity="info" title='"Qual o seu nome?"'></AlertMessage>
+                                                            <CustomTextField label="Nome do Solicitante" name="nomeSolicitante" value={nomeSolicitante} onChange={handleChange} />
+                                                            <AlertMessage severity="info" title='"Seu telefone é o final "XXXX"?"'>Informe os 4 últimos dígitos</AlertMessage>
+                                                            <YesNoField value={telefoneSolicitanteBoolean} onChange={(value) => handleChange("telefoneSolicitanteBoolean", value)} />
+                                                            {!telefoneSolicitanteBoolean &&
+                                                                <Grid>
+                                                                    <AlertMessage severity="info" title='"Informe o número correto por favor"'></AlertMessage>
+
+                                                                    {/* <TelefoneTextField name="telefoneSolicitanteNumber" value={telefoneSolicitanteNumber} onChange={handleChange} /> */}
+                                                                    <CustomTextField label="Telefone do Solicitante" name="telefoneSolicitanteNumber" value={telefoneSolicitanteNumber} onChange={handleChange} />
+                                                                </Grid>
+                                                            }
+
+                                                        </Grid>
+                                                    }
+                                                    {
+                                                        // COMO - VEÍCULOS / OBJETOS / CRONOGRAMA
+                                                        <Grid>
+                                                            {/* // Dados não emergenciais */}
+                                                            <CBMDFForm tags={tags} emergencial={false} tagStates={tagStates} updateTagState={UpdateTagState} />
+                                                        </Grid>
+                                                    }
+                                                    {
+                                                        // QUANTO - RECURSOS EMPREGADOS - SOLICITAÇÃO DE OUTROS RECURSOS
+                                                        <Grid>
+                                                            <EmConstrucao message="Verificar se é necessário o encaminhamento para outras agências" />
+                                                        </Grid>
+                                                    }
+                                                    {
+                                                        // CONCLUSÃO
+                                                        <Grid>
+                                                            <AlertMessage severity="info" title="Deseja acrescentar mais alguma informação?"></AlertMessage>
+                                                            <CustomTextField label="Insira mais observações" name="ocorrenciaRelato" value={ocorrenciaRelato} onChange={handleChange} />
+                                                            <AlertMessage severity="error" title="Copie o texto abaixo"></AlertMessage>
+                                                            <InputCopy field="Narrativa" value={narrativa} />
+                                                            <AlertMessage severity="error" title="Cole no campo NARRATIVA"></AlertMessage>
+                                                            <AlertMessage severity="error" title="Clique em 'FINALIZAR EDIÇÃO"></AlertMessage>
+                                                            <AlertMessage severity="info" title='"O registro foi finalizado. Qualquer apoio que precisar, pode nos ligar novamente"'></AlertMessage>
+                                                            <AlertMessage severity="error" title="Aguarde o OK do solicitante"></AlertMessage>
+                                                            <AlertMessage severity="info" title='"Informamos também que, nos próximos dias, você receberá em seu Whatsapp uma Pesquisa de Satisfação do atendimento do CBMDF. Seu retorno é muito importante para a melhoria dos nossos serviços"'></AlertMessage>
+                                                            <AlertMessage severity="error" title="Aguarde o OK do solicitante"></AlertMessage>
+                                                            <AlertMessage severity="info" title='"Conte sempre com o Corpo de Bombeiros"'></AlertMessage>
+                                                            <AlertMessage severity="error" title="Finalize o atendimento"></AlertMessage>
+                                                        </Grid>
+                                                    }
+                                                </Grid>
+                                            }
                                         </Grid>
-                                    }
-                                    {
-                                        // COMO - VEÍCULOS / OBJETOS / CRONOGRAMA
-                                        <Grid>
-                                            {/* // Dados não emergenciais */}
-                                            <CBMDFForm tags={tags} emergencial={false} tagStates={tagStates} updateTagState={UpdateTagState} />
-                                        </Grid>
-                                    }
-                                    {
-                                        // QUANTO - RECURSOS EMPREGADOS - SOLICITAÇÃO DE OUTROS RECURSOS
-                                        <Grid>
-                                            <EmConstrucao message="Verificar se é necessário o encaminhamento para outras agências" />
-                                        </Grid>
-                                    }
-                                    {
-                                        // CONCLUSÃO
-                                        <Grid>
-                                            <AlertMessage severity="info" title="Deseja acrescentar mais alguma informação?"></AlertMessage>
-                                            <CustomTextField label="Insira mais observações" name="ocorrenciaRelato" value={ocorrenciaRelato} onChange={handleChange} />
-                                            <AlertMessage severity="error" title="Copie o texto abaixo"></AlertMessage>
-                                            <InputCopy field="Narrativa" value={narrativa} />
-                                            <AlertMessage severity="error" title="Cole no campo NARRATIVA"></AlertMessage>
-                                            <AlertMessage severity="error" title="Clique em 'FINALIZAR EDIÇÃO"></AlertMessage>
-                                            <AlertMessage severity="info" title='"O registro foi finalizado. Qualquer apoio que precisar, pode nos ligar novamente"'></AlertMessage>
-                                            <AlertMessage severity="error" title="Aguarde o OK do solicitante"></AlertMessage>
-                                            <AlertMessage severity="info" title='"Informamos também que, nos próximos dias, você receberá em seu Whatsapp uma Pesquisa de Satisfação do atendimento do CBMDF. Seu retorno é muito importante para a melhoria dos nossos serviços"'></AlertMessage>
-                                            <AlertMessage severity="error" title="Aguarde o OK do solicitante"></AlertMessage>
-                                            <AlertMessage severity="info" title='"Conte sempre com o Corpo de Bombeiros"'></AlertMessage>
-                                            <AlertMessage severity="error" title="Finalize o atendimento"></AlertMessage>
-                                        </Grid>
+
                                     }
                                 </Grid>
                             }
-
                         </Grid>
                     }
                 </Grid>
