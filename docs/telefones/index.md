@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # Telefones de Serviço
@@ -29,6 +29,9 @@ sidebar_position: 5
 | CÃES e GATOS (Consulta, Exames, Cirurgia, Internação) | HOSPITAL VETERINÁRIO DE TAGUATINGA -DF | 99670-0897<br/>156 | 08:00 às 17:00 | Parque Largo do Cortado – Taguatinga – DF (Prox. ao SESI) |
 | CÃES, GATOS e SILVESTRES | HOSPITAL VETERINÁRIO DA UNB | 3107-2801<br/>2017-1347 | Segunda à Sexta:<br/>07:00 às 23:00<br/><br/>Sábado:<br/>08:00 às 18:00 | L4 Norte ASA NORTE- BSB |
 | CÃES e GATOS (Castração, Encaminhamento para o Hospital Veterinário) | SUPAN/SEMA-DF | 2141-5846<br/>98199-2410(WhatsApp) | 08:00 às 18:00 |  |
+| Resgate de animais silvestres encontrados fora de seu habitat natural. (Os animais mais comuns são: Saruê, Papagaio, Carcará, Cobras, Tamanduá, Lobo Guará, etc). | BPMA/PMDF | 190 | 24h |  |
+| Entrega de Jabuti, Papagaio, Periquitos e outros animais silvestres que foram domesticados. | CETAS/IBAMA | 61-3037-6986<br/>61-3037-2692<br/>61-3355-5940 | 07:00 às 17:00 | Floresta Nacional de Brasília-DF Rodovia BR – 070, Km 01 – Taguatinga – DF, 72010-971 |
+| Maus-tratos de animais, (viatura da área se for situação em flagrante); portando cão/gato: denúncia de maus-tratos de animais preso dentro de domicílio que não possua dono presente no local, deve pedir ao solicitante que formalize denúncia na PCDF. | PCDF | 197 | 24h |  |
 
 ## Outras Agências
 | Unidade | Local   | Contato | PERMITE TRANSFERIR |

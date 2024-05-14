@@ -1,26 +1,36 @@
 import { Grid } from "@mui/material"
-import { AlertMessage } from "@site/src/components/structure"
+import { AlertMessage, CustomTextField, YesNoField } from "@site/src/components/structure"
 
 export const CapturaInseto = props => {
+
+    const { tagState, updateTagState, emergencial } = props;
+    const { insetosAtacandoBoolean, localInsetos, alturaEnxame } = tagState;
+
+    const handleChange = (field, value) => {
+        const newState = { ...tagState, [field]: value };
+        updateTagState(field, newState);
+    };
+
     return (
         <Grid >
 
             {/* Perguntas Emergenciais */}
 
-            {props.emergencial &&
+            {emergencial &&
                 <Grid>
                     <AlertMessage severity="info" title='"Os insetos estão atacando as pessoas?"'></AlertMessage>
-                    <p>Sim/Não</p>
+                    <YesNoField value={insetosAtacandoBoolean} onChange={(value) => handleChange("insetosAtacandoBoolean", value)} />
                 </Grid>
             }
 
             {/* Perguntas Não Emergenciais */}
 
-            {!props.emergencial &&
+            {!emergencial &&
                 <Grid>
                     <AlertMessage severity="info" title='"Onde estão os insetos?"'></AlertMessage>
-                    <AlertMessage severity="info" title='"Qual a altura aproximada do enxame?"'></AlertMessage>
-                    <AlertMessage severity="info" title='"A ocorrência foi cadastrada e o quartel da região entrará em contato para colher mais informações, ok?"'></AlertMessage>
+                    <CustomTextField label="Local dos insetos" name="localInsetos" value={localInsetos} onChange={handleChange} />
+                    <AlertMessage severity="info" title='"Consegue dizer a altura aproximada do enxame?"'></AlertMessage>
+                    <CustomTextField label="Altura do enxame" name="origemText" value={alturaEnxame} onChange={handleChange} />
                 </Grid>
             }
         </Grid>

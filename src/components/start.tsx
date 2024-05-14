@@ -12,7 +12,7 @@ import {
 } from '@site/src/components/structure';
 import { AgradecimentoForm, ClassificacaoChamadaForm, DenunciaForm, InformacaoForm, LigacaoMudaForm, QuedaLigacaoForm, TroteForm } from '@site/src/components/forms/incidentes';
 import naturezasList from '@site/src/static/js/naturezas.json'
-import { CBMDFForm } from '../forms/cbmdf';
+import { CBMDFForm } from './forms/cbmdf';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
 
@@ -40,7 +40,12 @@ const Formulario = () => {
         tagStates: {
             vitimas: {
                 quantidadeVitimas: 1,
-                estadoVitima: ''
+                estadoVitima: '',
+                estadoVitimaOutroText: '',
+                estadoVitimaOutroEmergencialBoolean: false
+            },
+            ovace: {
+                confirmaOVACE: false
             },
             incendio_vegetacao: {
                 pessoasBoolean: false,
@@ -49,15 +54,16 @@ const Formulario = () => {
                 origemBoolean: false,
                 origemText: '',
                 irEstradaBoolean: false
+            },
+            captura_inseto: {
+                insetosAtacandoBoolean: false,
+                localInsetos: '',
+                alturaEnxame: ''
             }
         },
         ocorrenciaEmergencial: false,
         protocoloEmergencialBoolean: false,
         protocoloEmergencialNome: '',
-        dadosAPH: '',
-        dadosSalvamento: '',
-        dadosIncendio: '',
-        dadosOutros: '',
         descricao: '',
         nomeSolicitante: '',
         telefoneSolicitanteBoolean: true,
@@ -88,8 +94,9 @@ const Formulario = () => {
             ...prevState,
             [field]: value,
         }
-        ));
-        console.log(value)
+        )
+        )
+
     };
 
     const UpdateTagState = (field, value) => {
@@ -106,20 +113,29 @@ const Formulario = () => {
                 protocoloEmergencialNome,
             };
         });
-        console.log(value)
     };
 
     const checkProtocoloEmergencial = (field, value) => {
         if (field == "vitimas") {
-            if (value.estadoVitima === "Engasgada" || value.estadoVitima === "Respirando com Dificuldade") {
-                return { ocorrenciaEmergencial: true, protocoloEmergencialBoolean: true, protocoloEmergencialNome: "OVACE" };
+            if (value.estadoVitimaOutroEmergencialBoolean) {
+                return { ocorrenciaEmergencial: true };
             }
             if (value.estadoVitima == "Inconsciente") {
                 return { ocorrenciaEmergencial: true, protocoloEmergencialBoolean: true, protocoloEmergencialNome: "PCR" };
             }
         }
+        else if (field == "ovace") {
+            if (value.confirmaOVACE) {
+                return { ocorrenciaEmergencial: true, protocoloEmergencialBoolean: true, protocoloEmergencialNome: "OVACE" };
+            }
+        }
         else if (field == "incendio_vegetacao") {
             if (value.pessoasBoolean || value.animaisBoolean || value.residencisBoolean) {
+                return { ocorrenciaEmergencial: true };
+            }
+        }
+        else if (field == "captura_inseto") {
+            if (value.insetosAtacandoBoolean) {
                 return { ocorrenciaEmergencial: true };
             }
         }
@@ -131,6 +147,8 @@ const Formulario = () => {
     const handleNaturezasChange = (_, value) => {
         // Extrair todas as tags únicas dos itens selecionados
         const tagsSelecionadas = new Set<string>();
+
+
         value.forEach((item) => {
             item.tags.forEach((tag) => {
                 tagsSelecionadas.add(tag);
@@ -138,93 +156,13 @@ const Formulario = () => {
         });
 
         // Atualizar o estado com as naturezas selecionadas e as tags únicas
-        setState(prevState => ({
-            ...prevState,
-            naturezas: value,
-            tags: Array.from(tagsSelecionadas), // Convertendo o Set para um array
-        }));
+        setState(prevState => (
+            {
+                ...prevState,
+                naturezas: value,
+                tags: Array.from(tagsSelecionadas), // Convertendo o Set para um array
+            }));
     };
-
-
-    // Função para gerar a narrativa com as informações fornecidas
-    function gerarNarrativa() {
-        let narrativa = '';
-
-        if (incidenteBoolean) {
-            narrativa += `Incidente Registrado: ${tipoAtendimento.toUpperCase()}\n`
-        }
-        else if (naturezaAgenciaBoolean) {
-            narrativa += `OCORRÊNCIA DE ${naturezas.map(item => item.nome.toUpperCase()).join(', ')} NÃO ATENDIDA PELO CBMDF`;
-        }
-        else {
-            // Verifica se há ocorrência emergencial e adiciona à narrativa, se houver
-            if (ocorrenciaEmergencial) {
-                narrativa += '## OCORRÊNCIA EMERGENCIAL ##\n\n';
-            }
-
-            // Verifica se há protocolo emergencial e adiciona à narrativa, se houver
-            if (protocoloEmergencialBoolean) {
-                narrativa += `## PROTOCOLO DE ${protocoloEmergencialNome.toUpperCase()} INICIADO PELA CENTRAL DE OPERAÇÕES  ##\n\n`;
-            }
-
-            if (ufOcorrencia !== "DF") {
-                narrativa += `Ocorrência fora da circunscrição\nTransferida para ${cidadeOcorrencia.toUpperCase()} - ${ufOcorrencia}\n\n`;
-            }
-
-            // Adiciona informações sobre as naturezas
-            narrativa += `Natureza(s): ${naturezas.map(item => item.nome.toUpperCase()).join(', ')}\n`;
-
-            // Adiciona o relato
-            narrativa += `Relato: ${descricao.toUpperCase()}\n`;
-
-            if (ufOcorrencia == "DF") {
-
-                // Adiciona informações sobre o endereço e ponto de referência
-                narrativa += `Endereço: ${endereco.toUpperCase()} - ${cidadeOcorrencia.toUpperCase()} - ${ufOcorrencia}\n`;
-                if (pontoReferencia != '') {
-                    narrativa += `Ponto de Referência: ${pontoReferencia.toUpperCase()}\n`;
-                }
-
-                if (nomeSolicitante != '') {
-                    narrativa += `Nome do Solicitante: ${nomeSolicitante.toUpperCase()}\n`;
-                }
-            }
-
-            if (telefoneSolicitanteNumber != '') {
-                narrativa += `Número de telefone corrigido: ${telefoneSolicitanteNumber}\n`;
-            }
-
-            // Adiciona informações sobre a vítima, se houver
-            if (tagStates.vitimas.estadoVitima !== '') {
-                narrativa += `Vítima ${tagStates.vitimas.estadoVitima}\n`;
-            }
-
-            // // Adiciona informações sobre incendio em vegetacao, se houver
-            if (tagStates.incendio_vegetacao.pessoasBoolean) {
-                narrativa += `Pessoas no local do incêndio\n`;
-            }
-            if (tagStates.incendio_vegetacao.animaisBoolean) {
-                narrativa += `Animais no local do incêndio\n`;
-            }
-            if (tagStates.incendio_vegetacao.residenciasBoolean) {
-                narrativa += `Incêndio ameaçando residências\n`;
-            }
-            if (tagStates.incendio_vegetacao.origemBoolean) {
-                narrativa += `Suposta origem informada do incêndio: ${tagStates.incendio_vegetacao.origemText.toUpperCase()}\n`;
-            }
-
-            if (tagStates.incendio_vegetacao.irEstradaBoolean) {
-                narrativa += `Solicitante informou que se deslocará para estrada a fim de facilitar a localização\n`;
-            }
-            if (ocorrenciaRelato != '') {
-                narrativa += `Informações Complementares: ${ocorrenciaRelato.toUpperCase()}`
-            }
-        }
-        return narrativa;
-    }
-
-    // Gerar a narrativa
-    const narrativa = useMemo(() => gerarNarrativa(), [state, naturezas, tags, tagStates]);
 
     // Função para remover acentos e caracteres especiais
     function normalizeString(str) {
@@ -232,6 +170,104 @@ const Formulario = () => {
     }
 
     const sortedOptions = naturezasList.sort((a, b) => a.nome.localeCompare(b.nome));
+
+
+    // Função para gerar a narrativa com as informações fornecidas
+    function gerarNarrativa() {
+        let narrativa = '';
+
+        if (incidenteBoolean) {
+            narrativa += `Incidente Registrado: ${tipoAtendimento.toUpperCase()}\n`;
+        } else if (naturezaAgenciaBoolean) {
+            narrativa += `OCORRÊNCIA DE ${naturezas.map(item => item.nome.toUpperCase()).join(', ')} NÃO ATENDIDA PELO CBMDF`;
+        } else {
+            narrativa += adicionarOcorrenciaEmergencial();
+            narrativa += adicionarProtocoloEmergencial();
+            narrativa += adicionarTransferenciaForaDF();
+            narrativa += adicionarInformacoesNaturezas();
+            narrativa += adicionarRelatoEndereco();
+            narrativa += adicionarInformacoesVitima();
+            narrativa += adicionarInformacoesIncendioVegetacao();
+            narrativa += adicionarInformacoesCapturaInseto();
+            narrativa += adicionarInformacoesAdicionais();
+        }
+        return narrativa;
+    }
+
+    function adicionarOcorrenciaEmergencial() {
+        return ocorrenciaEmergencial ? '## OCORRÊNCIA EMERGENCIAL ##\n\n' : '';
+    }
+
+    function adicionarProtocoloEmergencial() {
+        return protocoloEmergencialBoolean ? `## PROTOCOLO DE ${protocoloEmergencialNome} INICIADO PELA CENTRAL DE OPERAÇÕES  ##\n\n` : '';
+    }
+
+    function adicionarTransferenciaForaDF() {
+        return ufOcorrencia !== "DF" ? `Ocorrência fora da circunscrição\nTransferida para ${cidadeOcorrencia} - ${ufOcorrencia}\n\n` : '';
+    }
+
+    function adicionarInformacoesNaturezas() {
+        return `Natureza(s): ${naturezas.map(item => item.nome.toUpperCase()).join(', ')}\n`;
+    }
+
+    function adicionarRelatoEndereco() {
+        let texto = '';
+
+        if (ufOcorrencia === "DF") {
+            texto += `Endereço: ${endereco.toUpperCase()} - ${cidadeOcorrencia.toUpperCase()} - ${ufOcorrencia}\n`;
+            texto += pontoReferencia ? `Ponto de Referência: ${pontoReferencia.toUpperCase()}\n` : '';
+            texto += nomeSolicitante ? `Nome do Solicitante: ${nomeSolicitante.toUpperCase()}\n` : '';
+        }
+
+        return texto;
+    }
+
+    function adicionarInformacoesVitima() {
+        let texto = '';
+
+        if (tags.includes("vitimas")) {
+            texto += '\nINFORMAÇÕES SOBRE A VÍTIMA\n';
+            texto += `- ${tagStates.vitimas.estadoVitima == 'Outros' ? '. ' + tagStates.vitimas.estadoVitimaOutroText : tagStates.vitimas.estadoVitima
+                }\n`;
+            if (tagStates.vitimas.estadoVitimaOutroEmergencialBoolean) texto += `- Quadro classificado como EMERGENCIAL pelo teleatendente\n`;
+        }
+        return texto;
+    }
+
+    function adicionarInformacoesIncendioVegetacao() {
+        let texto = '';
+        if (tags.includes("incendio_vegetacao")) {
+            texto += '\nINFORMAÇÕES SOBRE O INCÊNDIO EM VEGETAÇÃO\n';
+            if (tagStates.incendio_vegetacao.pessoasBoolean) texto += `- Pessoas no local do incêndio\n`;
+            if (tagStates.incendio_vegetacao.animaisBoolean) texto += `- Animais no local do incêndio\n`;
+            if (tagStates.incendio_vegetacao.residenciasBoolean) texto += `- Incêndio ameaçando residências\n`;
+            if (tagStates.incendio_vegetacao.origemBoolean) texto += `- Suposta origem informada do incêndio: ${tagStates.incendio_vegetacao.origemText}\n`;
+            if (tagStates.incendio_vegetacao.irEstradaBoolean) texto += `- Solicitante informou que se deslocará para estrada a fim de facilitar a localização\n`;
+        }
+
+        return texto;
+    }
+
+    function adicionarInformacoesCapturaInseto() {
+        let texto = '';
+        if (tags.includes("captura_inseto")) {
+            texto += '\nINFORMAÇÕES SOBRE A CAPTURA DE INSETOS\n';
+            if (tagStates.captura_inseto.insetosAtacandoBoolean) texto += `- Insetos atacando pessoas\n`;
+            if (tagStates.captura_inseto.localInsetos) texto += `- Local dos insetos: ${tagStates.captura_inseto.localInsetos}\n`;
+            if (tagStates.captura_inseto.alturaEnxame) texto += `- Altura aproximada do enxme: ${tagStates.captura_inseto.alturaEnxame}\n`;
+
+        }
+
+        return texto;
+    }
+
+    function adicionarInformacoesAdicionais() {
+        return ocorrenciaRelato ? `\nInformações Complementares: ${ocorrenciaRelato}` : '';
+    }
+
+
+    // Gerar a narrativa
+    const narrativa = useMemo(() => gerarNarrativa(), [state, naturezas, tags, tagStates]);
 
 
     return (
@@ -278,10 +314,10 @@ const Formulario = () => {
                                 ]; // Lista expandida de palavras a serem excluídas
                                 const inputWords = descricao.trim().toLowerCase().split(" ").map(word => normalizeString(word)).filter(word => !excludedWords.includes(word)); // Usando as palavras da descrição para a pesquisa
                                 const filteredOptions = options.filter((option) => {
-                                    const tags = option.pesquisa || [];
+                                    const tags_pesquisa = option.pesquisa || [];
                                     // Verificar se pelo menos uma das palavras da descrição (excluindo as palavras comuns) está presente em alguma tag
                                     return inputWords.some((inputWord) => {
-                                        return tags.some((tag) => normalizeString(tag).toLowerCase().includes(inputWord));
+                                        return tags_pesquisa.some((tag_pesquisa) => tag_pesquisa.toLowerCase().includes(inputWord));
                                     });
                                 });
                                 return filteredOptions;
@@ -332,7 +368,7 @@ const Formulario = () => {
                                             <AlertMessage severity="error" title="Clique em TRANSFERÊNCIA ASSISTIDA"></AlertMessage>
                                             <AlertMessage severity="error" title="Aguarde o atendente na outra linha atender para desligar a chamada"></AlertMessage>
                                             {protocoloEmergencialBoolean &&
-                                                <a href={`operacoes/${protocoloEmergencialNome}`}>
+                                                <a href={`socorro_teleatendimento/${protocoloEmergencialNome}`}>
                                                     <Button
                                                         size="large"
                                                         variant="contained"
@@ -399,7 +435,7 @@ const Formulario = () => {
                                                 protocoloEmergencialBoolean &&
                                                 <Grid>
                                                     <AlertMessage severity="info" title={`A ocorrência já foi cadastrada e o socorro será enviado. Vamos iniciar o protocolo de ${protocoloEmergencialNome} ok?`}></AlertMessage>
-                                                    <a href={`operacoes/${protocoloEmergencialNome}`}>
+                                                    <a href={`socorro_teleatendimento/${protocoloEmergencialNome}`}>
                                                         <Button
                                                             size="large"
                                                             variant="contained"
@@ -417,7 +453,7 @@ const Formulario = () => {
                                                 <Grid>
                                                     <AlertMessage severity="info" title='"A ocorrência já foi cadastrada e encaminhada para a unidade mais próxima, ok? Agora vamos complementar alguns dados"'></AlertMessage>
                                                     {
-                                                        // QUEM - INFORMAÇÕES DO SOLICITANTE
+                                                        //  INFORMAÇÕES DO SOLICITANTE
                                                         <Grid>
                                                             <AlertMessage severity="info" title='"Qual o seu nome?"'></AlertMessage>
                                                             <CustomTextField label="Nome do Solicitante" name="nomeSolicitante" value={nomeSolicitante} onChange={handleChange} />
@@ -435,14 +471,14 @@ const Formulario = () => {
                                                         </Grid>
                                                     }
                                                     {
-                                                        // COMO - VEÍCULOS / OBJETOS / CRONOGRAMA
+                                                        // COMO - Protocolo Operacional Padrão de acordo com elementos na cena (veículos, pessoas, objetos)
                                                         <Grid>
                                                             {/* // Dados não emergenciais */}
                                                             <CBMDFForm tags={tags} emergencial={false} tagStates={tagStates} updateTagState={UpdateTagState} />
                                                         </Grid>
                                                     }
                                                     {
-                                                        // QUANTO - RECURSOS EMPREGADOS - SOLICITAÇÃO DE OUTROS RECURSOS
+                                                        // QUEM/QUANTO - RECURSOS EMPREGADOS - SOLICITAÇÃO DE OUTROS RECURSOS
                                                         <Grid>
                                                             <EmConstrucao message="Verificar se é necessário o encaminhamento para outras agências" />
                                                         </Grid>

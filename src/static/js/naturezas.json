@@ -2,7 +2,7 @@
   {
     "nome": "Obstrução de Vias aéreas por corpos estranhos (OVACE)",
     "tags": [
-      "vitimas"
+      "ovace"
     ],
     "pesquisa": [
       "obstrucao",
@@ -41,6 +41,7 @@
       "vitimas"
     ],
     "pesquisa": [
+      "pessoa",
       "desmaiada",
       "passando mal",
       "enjoada",

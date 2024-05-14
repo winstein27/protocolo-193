@@ -1,10 +1,9 @@
-import { FormControl, FormControlLabel, FormLabel, Grid, Radio, RadioGroup, TextField } from "@mui/material"
-import { AlertMessage, CustomTextField } from "@site/src/components/structure"
-import { useState } from "react";
+import { FormControl, FormControlLabel, Grid, Radio, RadioGroup, TextField } from "@mui/material"
+import { AlertMessage, CustomTextField, YesNoField } from "@site/src/components/structure"
 
 const Vitimas = (props) => {
     const { tagState, updateTagState, emergencial } = props;
-    const { estadoVitima, quantidadeVitimas } = tagState;
+    const { estadoVitima, estadoVitimaOutroText, estadoVitimaOutroEmergencialBoolean } = tagState;
 
     const handleChange = (field, value) => {
         const newState = { ...tagState, [field]: value };
@@ -20,7 +19,7 @@ const Vitimas = (props) => {
                     {/* <AlertMessage severity="info" title="Quantas vítimas?"></AlertMessage> */}
                     {/* <TextField value={quantidadeVitimas} onChange={(value) => handleChange("quantidadeVitimas", value)} /> */}
                     {/* <CustomTextField value={quantidadeVitimas} onChange={handleChange} label={undefined} name={undefined} /> */}
-                    <AlertMessage severity="info" title="Como está a vítima?"></AlertMessage>
+                    <AlertMessage severity="info" title="Como está a pessoa?"></AlertMessage>
                     <FormControl component="fieldset">
                         <RadioGroup
                             row
@@ -31,25 +30,17 @@ const Vitimas = (props) => {
                         >
                             <FormControlLabel value="Consciente" control={<Radio />} label="Consciente" />
                             <FormControlLabel value="Engasgada" control={<Radio />} label="Engasgada" />
-                            <FormControlLabel value="Respirando com Dificuldade" control={<Radio />} label="Respirando com Dificuldade" />
                             <FormControlLabel value="Inconsciente" control={<Radio />} label="Inconsciente" />
+                            <FormControlLabel value="Outro" control={<Radio />} label="Outro" />
                         </RadioGroup>
                     </FormControl>
-                    {/* {estadoVitima == "Engasgada" &&
+                    {estadoVitima == "Outro" &&
                         <Grid>
-                            PROTOCOLO OVACE
+                            <CustomTextField label="Insira outras características da vítima informadas pelo solicitante" name="estadoVitimaOutroText" value={estadoVitimaOutroText} onChange={handleChange} />
+                            <YesNoField label="Exige atendimento emergencial?" value={estadoVitimaOutroEmergencialBoolean} onChange={(value) => handleChange("estadoVitimaOutroEmergencialBoolean", value)} />
                         </Grid>
                     }
-                    {estadoVitima == "Respiração Difícil" &&
-                        <Grid>
-                            PROTOCOLO OVACE
-                        </Grid>
-                    }
-                    {estadoVitima == "Inconsciente" &&
-                        <Grid>
-                            PROTOCOLO PCR
-                        </Grid>
-                    } */}
+
                 </Grid>
             }
 

@@ -290,53 +290,6 @@ export const SelectNumber = ({ start = 0, end = 1, defaultNumber = 0, onChange }
     );
 };
 
-// export const NumberTextField = props => {
-//     const [quantity, setQuantity] = useState(0);
-
-//     const handleChange = (event) => {
-//         const value = parseInt(event.target.value);
-//         setQuantity(value);
-//         props.onChange(value);
-//     };
-
-//     return (
-//         <Grid item xs={12}>
-//             <TextField
-//                 label="Quantidade de Vítimas"
-//                 name="quantidade_vitimas"
-//                 type="number"
-//                 value={quantity}
-//                 onChange={handleChange}
-//                 fullWidth
-//             />
-//         </Grid>
-//     );
-// };
-
-// export const NumberInput = props => {
-//     const [value, setValue] = useState(1);
-
-//     const handleChange = (event) => {
-//         const inputValue = event.target.value;
-//         // Verifica se o valor inserido é um número
-//         //TODO: Ainda não valida números
-//         if (!isNaN(inputValue)) {
-//             setValue(inputValue);
-//         }
-//     };
-
-//     return (
-//         <TextField
-//             type="number"
-//             value={props.value}
-//             onChange={handleChange}
-//             InputLabelProps={{
-//                 shrink: true,
-//             }}
-//         />
-//     );
-// }
-
 export const InputCopy = props => {
 
     const [copied, setCopied] = useState(false);

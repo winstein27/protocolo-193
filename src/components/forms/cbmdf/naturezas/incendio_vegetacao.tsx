@@ -3,25 +3,6 @@ import { Grid } from '@mui/material';
 import { YesNoField, AlertMessage, CustomTextField } from '@site/src/components/structure';
 
 export const IncendioVegetacao = props => {
-    // const [state, setState] = useState({
-    //     pessoas: false,
-    //     animais: false,
-    // residencias: false,
-    // origem: false,
-    // origemText: '',
-    // pessoaNoLocal: false,
-    // relato: '',
-    // narrativa: '',
-    // pontoReferencia: '',
-    // irEstrada: false,
-    // pontoReferenciaBoolean: false
-    // });
-
-    // const { pessoas, animais, residencias, origem, origemText, irEstrada } = state;
-
-    // const handleChange = (field, value) => {
-    //     setState(prevState => ({ ...prevState, [field]: value }));
-    // };
 
     const { tagState, updateTagState, emergencial } = props;
     const { pessoasBoolean, animaisBoolean, residenciasBoolean, origemBoolean, origemText, irEstradaBoolean } = tagState;
@@ -38,13 +19,13 @@ export const IncendioVegetacao = props => {
 
             {emergencial &&
                 <Grid>
-                    <AlertMessage severity="info" title='"Há pessoas no local?"' />
+                    <AlertMessage severity="info" title='"Há pessoas próximas ao incêndio?"' />
                     <YesNoField value={pessoasBoolean} onChange={(value) => handleChange("pessoasBoolean", value)} />
 
-                    <AlertMessage severity="info" title='"Há animais no local?"' />
+                    <AlertMessage severity="info" title='"Há animais próximos ao incêndio?"' />
                     <YesNoField value={animaisBoolean} onChange={(value) => handleChange("animaisBoolean", value)} />
 
-                    <AlertMessage severity="info" title='"Incêndio está ameaçando residências?"' />
+                    <AlertMessage severity="info" title='"Há residências próximas ao incêndio?"' />
                     <YesNoField value={residenciasBoolean} onChange={(value) => handleChange("residenciasBoolean", value)} />
 
                     {/* AlertMessages consolidados no final */}

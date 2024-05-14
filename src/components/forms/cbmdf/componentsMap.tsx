@@ -1,6 +1,7 @@
 import { CapturaInseto } from "./naturezas/captura_inseto";
 import { ColisaoVeiculo } from "./naturezas/colisao_veiculo";
 import { IncendioVegetacao } from "./naturezas/incendio_vegetacao";
+import Ovace from "./naturezas/ovace";
 import Vitimas from "./naturezas/vitimas";
 
 // Componentes correspondentes às tags
@@ -10,12 +11,12 @@ export const ComponentsMap = {
     captura_inseto: CapturaInseto,
     colisao_veiculo: ColisaoVeiculo,
     incendio_vegetacao: IncendioVegetacao,
+    ovace: Ovace,
 
     // afogamento: Afogamento,
     // incendio_edificacao: IncendioEdificacao,
     // incendio_residencia: IncendioResidencia,
     // incendio_veiculo: IncendioVeiculo,
-    // ovace: Ovace,
     // pcr: ParadaCardiorrespiratoria,
     // queda_propria_altura: QuedaPropriaAltura,
     // queimadura: Queimadura,
