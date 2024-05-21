@@ -16,28 +16,7 @@
       "engasgada",
       "entalada",
       "respira"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
-  },
-  {
-    "nome": "Tentativa de Suicídio",
-    "tags": [
-      "suicidio"
-    ],
-    "pesquisa": [
-      "tentativa",
-      "suicidio",
-      "pular",
-      "jogar",
-      "ameacando",
-      "ponte",
-      "predio",
-      "depressao",
-      "deprimida"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   },
   {
     "nome": "Parada Cardiorrespiratória",
@@ -54,9 +33,7 @@
       "desmaiada",
       "desmaiado",
       "respira"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   },
   {
     "nome": "Emergência Clínica",
@@ -69,9 +46,7 @@
       "passando mal",
       "enjoada",
       "desmaiada"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   },
   {
     "nome": "Emergência Psiquiátrica",
@@ -92,9 +67,7 @@
       "esquizofrenico",
       "esquizofrenica",
       "esquizofrenia"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   },
   {
     "nome": "Captura de Insetos",
@@ -104,9 +77,7 @@
     "pesquisa": [
       "Captura de Insetos",
       "abelhas"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   },
   {
     "nome": "Colisão",
@@ -124,9 +95,7 @@
       "carros",
       "moto",
       "poste"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   },
   {
     "nome": "Afogamento",
@@ -143,9 +112,7 @@
       "piscina",
       "rio",
       "lago"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   },
   {
     "nome": "Incêndio em Vegetação",
@@ -162,9 +129,7 @@
       "matagal",
       "florestas",
       "parques"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   },
   {
     "nome": "Incêndio em Veículo",
@@ -181,9 +146,7 @@
       "onibus",
       "motos",
       "bicicletas"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   },
   {
     "nome": "Queda da Própria Altura",
@@ -198,9 +161,7 @@
       "machucou",
       "lesao",
       "lesionou"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   },
   {
     "nome": "Queda de Veículo",
@@ -220,9 +181,7 @@
       "onibus",
       "motos",
       "bicicletas"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   },
   {
     "nome": "Violência Doméstica",
@@ -249,8 +208,6 @@
       "hamburguer",
       "comida",
       "entrega"
-    ],
-    "grupo": "operacoes",
-    "subgrupo": "busca_salvamento"
+    ]
   }
 ]

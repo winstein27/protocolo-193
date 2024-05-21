@@ -16,9 +16,6 @@ const Vitimas = (props) => {
             {/* Perguntas Emergenciais */}
             {emergencial &&
                 <Grid>
-                    {/* <AlertMessage severity="info" title="Quantas vítimas?"></AlertMessage> */}
-                    {/* <TextField value={quantidadeVitimas} onChange={(value) => handleChange("quantidadeVitimas", value)} /> */}
-                    {/* <CustomTextField value={quantidadeVitimas} onChange={handleChange} label={undefined} name={undefined} /> */}
                     <AlertMessage severity="info" title="Como está a pessoa?"></AlertMessage>
                     <FormControl component="fieldset">
                         <RadioGroup
@@ -29,9 +26,8 @@ const Vitimas = (props) => {
                             onChange={(event) => handleChange("estadoVitima", event.target.value)}
                         >
                             <FormControlLabel value="Consciente" control={<Radio />} label="Consciente" />
-                            <FormControlLabel value="Engasgada" control={<Radio />} label="Engasgada" />
                             <FormControlLabel value="Inconsciente" control={<Radio />} label="Inconsciente" />
-                            <FormControlLabel value="Outro" control={<Radio />} label="Outro" />
+                            <FormControlLabel value="Outro" control={<Radio />} label="Outro Estado" />
                         </RadioGroup>
                     </FormControl>
                     {estadoVitima == "Outro" &&

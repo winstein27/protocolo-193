@@ -59,6 +59,9 @@ const Formulario = () => {
                 insetosAtacandoBoolean: false,
                 localInsetos: '',
                 alturaEnxame: ''
+            },
+            suicidio: {
+                statusSuicidio: ''
             }
         },
         ocorrenciaEmergencial: false,

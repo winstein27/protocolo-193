@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Telefones de Serviço
 
-## Bombeiros de Goiàs
+## Bombeiros de Goiás
 
 | Unidade | Local                                  | Contato | PERMITE TRANSFERIR |
 |---------|----------------------------------------|---------|---------|
@@ -47,6 +47,17 @@ sidebar_position: 4
 | DETRAN |  - | 154 | ✅|
 | METRÔ |  - | 33537000 |✅| 
 | CVV - CENTRO DE VALORIZAÇÃO DA VIDA |  - | 188 | ✅|
+| CENTRO POP | BRASÍLIA | 3773-7561<br/>3773-7562<br/>3773-7563 | ✅|
+| CENTRO POP | TAGUATINGA | 3773-7556<br/>3773-7557 | ✅|
+
+
+## Transporte de Militares
+
+| Nome            | SERVIÇO                          | TELEFONE   |
+|-----------------|----------------------------------|------------|
+| WMED            | TRANSPORTE DE MILITARES ATIVOS   | 3567-8863  |
+| DINAP           | TRANSPORTE DE MILITARES VETERANOS| 99208-7845 |
+| PMDF            | TRANSPORTE DE MILITARES DA PMDF  | 190        |
 
 
 ## Quartéis do CBMDF
@@ -84,3 +95,5 @@ sidebar_position: 4
 | GBSAL           | BUSCA E SALVAMENTO               | 3190-0100  |
 | GPCIU           | INCÊNDIO URBANO                  | 3193-8725  |
 | GPRAM           | INCÊNDIO FLORESTAL               | 3193-0004  |
+| DINVI           | PERÍCIA DE INCÊNDIO               | 99152-8715  |
+| CETOP           | CENTRO DE TREINAMENTO OPERACIONAL | 99232-4361  |

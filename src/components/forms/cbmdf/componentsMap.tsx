@@ -3,6 +3,7 @@ import { ColisaoVeiculo } from "./naturezas/colisao_veiculo";
 import { IncendioVegetacao } from "./naturezas/incendio_vegetacao";
 import Ovace from "./naturezas/ovace";
 import Vitimas from "./naturezas/vitimas";
+import Suicidio from "./naturezas/suicidio";
 
 // Componentes correspondentes às tags
 
@@ -12,6 +13,7 @@ export const ComponentsMap = {
     colisao_veiculo: ColisaoVeiculo,
     incendio_vegetacao: IncendioVegetacao,
     ovace: Ovace,
+    suicidio: Suicidio,
 
     // afogamento: Afogamento,
     // incendio_edificacao: IncendioEdificacao,
