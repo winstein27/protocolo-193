@@ -1,9 +1,9 @@
-import { FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material"
+import { FormControl, FormControlLabel, FormLabel, Grid, Radio, RadioGroup } from "@mui/material"
 import { AlertMessage, EmConstrucao, YesNoField } from "@site/src/components/structure"
 
 const Suicidio = (props) => {
     const { tagState, updateTagState, emergencial } = props;
-    const { statusSuicidio } = tagState;
+    const { statusSuicidio, tentante } = tagState;
 
     const handleChange = (field, value) => {
         const newState = { ...tagState, [field]: value };
@@ -16,7 +16,7 @@ const Suicidio = (props) => {
             {/* Perguntas Emergenciais */}
             {emergencial &&
                 <Grid>
-                    <AlertMessage severity="error" title="Marque se o suicidio está EM ANDAMENTO ou CONSUMADO"></AlertMessage>
+                    <AlertMessage severity="error" title="Marque se o suicídio está EM ANDAMENTO ou CONSUMADO"></AlertMessage>
                     <FormControl component="fieldset">
                         <RadioGroup
                             row
@@ -30,7 +30,18 @@ const Suicidio = (props) => {
                     </FormControl>
                     {statusSuicidio == "Em Andamento" &&
                         <Grid>
-                            <EmConstrucao message="Procedimentos para Suicídio em Andamento" />
+                            <AlertMessage severity="error" title="Marque quem está tentando o suicídio"></AlertMessage>
+                            <FormControl component="fieldset">
+                                <RadioGroup
+                                    row
+                                    name="tentante"
+                                    value={tentante}
+                                    onChange={(event) => handleChange("tentante", event.target.value)}
+                                >
+                                    <FormControlLabel value="Próprio Solicitante" control={<Radio />} label="Próprio Solicitante" />
+                                    <FormControlLabel value="Outra Pessoa" control={<Radio />} label="Outra Pessoa" />
+                                </RadioGroup>
+                            </FormControl>
                         </Grid>
                     }
                     {statusSuicidio == "Consumado" &&

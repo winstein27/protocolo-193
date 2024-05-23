@@ -1,17 +1,16 @@
-import { useState, useMemo } from 'react';
-import { Autocomplete, Button, Grid, Stack, TextField } from '@mui/material';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Alert, Snackbar, Button, Grid, TextField, Autocomplete } from '@mui/material';
+import { normalizeString } from './utils';
+import naturezasList from '@site/src/static/js/naturezas.json';
 import {
     AlertMessage, CidadeSelect, CustomTextField,
-    EmConstrucao,
-    InputCopy,
-    SwitchField,
-    TelefoneTextField,
-    UfSelect,
-    UnidadesTable,
-    YesNoField,
+    EmConstrucao, InputCopy, SwitchField, UfSelect,
+    UnidadesTable, YesNoField
 } from '@site/src/components/structure';
-import { AgradecimentoForm, ClassificacaoChamadaForm, DenunciaForm, InformacaoForm, LigacaoMudaForm, QuedaLigacaoForm, TroteForm } from '@site/src/components/forms/incidentes';
-import naturezasList from '@site/src/static/js/naturezas.json'
+import {
+    AgradecimentoForm, ClassificacaoChamadaForm, DenunciaForm,
+    InformacaoForm, LigacaoMudaForm, QuedaLigacaoForm, TroteForm
+} from '@site/src/components/forms/incidentes';
 import { CBMDFForm } from './forms/cbmdf';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
@@ -61,7 +60,8 @@ const Formulario = () => {
                 alturaEnxame: ''
             },
             suicidio: {
-                statusSuicidio: ''
+                statusSuicidio: '',
+                tentante: ''
             }
         },
         ocorrenciaEmergencial: false,
@@ -91,15 +91,23 @@ const Formulario = () => {
         nomeSolicitante,
         telefoneSolicitanteBoolean,
         telefoneSolicitanteNumber } = state;
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+
+    useEffect(() => {
+        if (ocorrenciaEmergencial) {
+            setSnackbarOpen(true);
+            const timer = setTimeout(() => {
+                setSnackbarOpen(false);
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [ocorrenciaEmergencial]);
 
     const handleChange = (field, value) => {
         setState(prevState => ({
             ...prevState,
             [field]: value,
-        }
-        )
-        )
-
+        }));
     };
 
     const UpdateTagState = (field, value) => {
@@ -119,58 +127,42 @@ const Formulario = () => {
     };
 
     const checkProtocoloEmergencial = (field, value) => {
-        if (field == "vitimas") {
+        if (field === "vitimas") {
             if (value.estadoVitimaOutroEmergencialBoolean) {
                 return { ocorrenciaEmergencial: true };
             }
-            if (value.estadoVitima == "Inconsciente") {
+            if (value.estadoVitima === "Inconsciente") {
                 return { ocorrenciaEmergencial: true, protocoloEmergencialBoolean: true, protocoloEmergencialNome: "PCR" };
             }
-        }
-        else if (field == "ovace") {
+        } else if (field === "ovace") {
             if (value.confirmaOVACE) {
                 return { ocorrenciaEmergencial: true, protocoloEmergencialBoolean: true, protocoloEmergencialNome: "OVACE" };
             }
-        }
-        else if (field == "incendio_vegetacao") {
-            if (value.pessoasBoolean || value.animaisBoolean || value.residencisBoolean) {
+        } else if (field === "incendio_vegetacao") {
+            if (value.pessoasBoolean || value.animaisBoolean || value.residenciasBoolean) {
                 return { ocorrenciaEmergencial: true };
             }
-        }
-        else if (field == "captura_inseto") {
+        } else if (field === "captura_inseto") {
             if (value.insetosAtacandoBoolean) {
                 return { ocorrenciaEmergencial: true };
             }
         }
-
-        // Se não corresponder a nenhum critério, retorna um objeto com valores padrão
         return { ocorrenciaEmergencial: false, protocoloEmergencialBoolean: false, protocoloEmergencialNome: "" };
     };
 
     const handleNaturezasChange = (_, value) => {
-        // Extrair todas as tags únicas dos itens selecionados
-        const tagsSelecionadas = new Set<string>();
-
-
+        const tagsSelecionadas = new Set();
         value.forEach((item) => {
             item.tags.forEach((tag) => {
                 tagsSelecionadas.add(tag);
             });
         });
-
-        // Atualizar o estado com as naturezas selecionadas e as tags únicas
-        setState(prevState => (
-            {
-                ...prevState,
-                naturezas: value,
-                tags: Array.from(tagsSelecionadas), // Convertendo o Set para um array
-            }));
+        setState(prevState => ({
+            ...prevState,
+            naturezas: value,
+            tags: Array.from(tagsSelecionadas),
+        }));
     };
-
-    // Função para remover acentos e caracteres especiais
-    function normalizeString(str) {
-        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z0-9]/g, "");
-    }
 
     const sortedOptions = naturezasList.sort((a, b) => a.nome.localeCompare(b.nome));
 
@@ -275,6 +267,16 @@ const Formulario = () => {
 
     return (
         <Grid>
+            <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={3000}
+                onClose={() => setSnackbarOpen(false)}
+            >
+                <Alert onClose={() => setSnackbarOpen(false)} severity="warning" variant="filled">
+                    Ocorrência definida como EMERGENCIAL
+                </Alert>
+            </Snackbar>
+
             <AlertMessage severity="info" title='"Bombeiros, Emergência, Distrito Federal"'>Repita até 3 vezes</AlertMessage>
 
             <SwitchField label="Não é ocorrência" value={incidenteBoolean} onChange={(value) => handleChange("incidenteBoolean", value)} />

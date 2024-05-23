@@ -21,7 +21,7 @@
     "subgrupo": "busca_salvamento"
   },
   {
-    "nome": "Tentativa de Suicídio",
+    "nome": "Suicídio",
     "tags": [
       "suicidio"
     ],
@@ -30,6 +30,7 @@
       "suicidio",
       "pular",
       "jogar",
+      "pessoa",
       "ameacando",
       "ponte",
       "predio",
