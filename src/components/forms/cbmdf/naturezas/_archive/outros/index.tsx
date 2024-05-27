@@ -1,6 +1,3 @@
-export const OutrosForm = props => {
-    return (
-        <p>Outros</p>
-
-    )
-}
+export const OutrosForm = (props) => {
+  return <p>Outros</p>;
+};

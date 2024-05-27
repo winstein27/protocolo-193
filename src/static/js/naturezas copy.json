@@ -1,9 +1,7 @@
 [
   {
     "nome": "Obstrução de Vias aéreas por corpos estranhos (OVACE)",
-    "tags": [
-      "ovace"
-    ],
+    "tags": ["ovace"],
     "pesquisa": [
       "obstrucao",
       "ovace",
@@ -20,9 +18,7 @@
   },
   {
     "nome": "Parada Cardiorrespiratória",
-    "tags": [
-      "vitimas"
-    ],
+    "tags": ["vitimas"],
     "pesquisa": [
       "parada respiratoria",
       "cardiorrespiratoria",
@@ -37,22 +33,12 @@
   },
   {
     "nome": "Emergência Clínica",
-    "tags": [
-      "vitimas"
-    ],
-    "pesquisa": [
-      "pessoa",
-      "desmaiada",
-      "passando mal",
-      "enjoada",
-      "desmaiada"
-    ]
+    "tags": ["vitimas"],
+    "pesquisa": ["pessoa", "desmaiada", "passando mal", "enjoada", "desmaiada"]
   },
   {
     "nome": "Emergência Psiquiátrica",
-    "tags": [
-      "vitimas"
-    ],
+    "tags": ["vitimas"],
     "pesquisa": [
       "surto",
       "psicotica",
@@ -71,20 +57,12 @@
   },
   {
     "nome": "Captura de Insetos",
-    "tags": [
-      "captura_inseto"
-    ],
-    "pesquisa": [
-      "Captura de Insetos",
-      "abelhas"
-    ]
+    "tags": ["captura_inseto"],
+    "pesquisa": ["Captura de Insetos", "abelhas"]
   },
   {
     "nome": "Colisão",
-    "tags": [
-      "colisao_veiculo",
-      "vitimas"
-    ],
+    "tags": ["colisao_veiculo", "vitimas"],
     "pesquisa": [
       "colisao",
       "colidiram",
@@ -99,9 +77,7 @@
   },
   {
     "nome": "Afogamento",
-    "tags": [
-      "afogamento"
-    ],
+    "tags": ["afogamento"],
     "pesquisa": [
       "afogamento",
       "afogado",
@@ -116,9 +92,7 @@
   },
   {
     "nome": "Incêndio em Vegetação",
-    "tags": [
-      "incendio_vegetacao"
-    ],
+    "tags": ["incendio_vegetacao"],
     "pesquisa": [
       "incendio",
       "fogo",
@@ -133,9 +107,7 @@
   },
   {
     "nome": "Incêndio em Veículo",
-    "tags": [
-      "incendio_veiculo"
-    ],
+    "tags": ["incendio_veiculo"],
     "pesquisa": [
       "incendio",
       "fogo",
@@ -150,9 +122,7 @@
   },
   {
     "nome": "Queda da Própria Altura",
-    "tags": [
-      "queda_propria_altura"
-    ],
+    "tags": ["queda_propria_altura"],
     "pesquisa": [
       "queda",
       "caiu",
@@ -165,9 +135,7 @@
   },
   {
     "nome": "Queda de Veículo",
-    "tags": [
-      "queda_veiculo"
-    ],
+    "tags": ["queda_veiculo"],
     "pesquisa": [
       "queda",
       "caiu",
@@ -185,9 +153,7 @@
   },
   {
     "nome": "Violência Doméstica",
-    "tags": [
-      "violencia_domestica"
-    ],
+    "tags": ["violencia_domestica"],
     "pesquisa": [
       "violencia",
       "domestica",

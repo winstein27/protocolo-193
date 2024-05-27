@@ -1,6 +1,3 @@
-export const IncendioForm = props => {
-    return (
-        <p>Incêndio</p>
-
-    )
-}
+export const IncendioForm = (props) => {
+  return <p>Incêndio</p>;
+};

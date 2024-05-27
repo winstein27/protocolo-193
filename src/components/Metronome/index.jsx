@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "./metronome.css";
 
 const Metronome = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [timer, setTimer] = useState(0); // Inicializa o cronômetro em 0 segundos
 
-  const clickFile = "https://github.com/munizigor/protocolo-193/raw/main/src/components/Metronome/static/click.wav"; // Insira o caminho do seu arquivo de som
-  const bellFile = "https://github.com/munizigor/protocolo-193/raw/main/src/components/Metronome/static/bell.wav"; // Insira o caminho do seu arquivo de som de sino
+  const clickFile =
+    "https://github.com/munizigor/protocolo-193/raw/main/src/components/Metronome/static/click.wav"; // Insira o caminho do seu arquivo de som
+  const bellFile =
+    "https://github.com/munizigor/protocolo-193/raw/main/src/components/Metronome/static/bell.wav"; // Insira o caminho do seu arquivo de som de sino
 
   const playClickSound = () => {
     const click = new Audio(clickFile);
@@ -50,7 +52,7 @@ const Metronome = () => {
     let countdownInterval;
     if (isPlaying) {
       countdownInterval = setInterval(() => {
-        setTimer(timer => timer + 1); // Incrementa o cronômetro regressivo a cada segundo
+        setTimer((timer) => timer + 1); // Incrementa o cronômetro regressivo a cada segundo
       }, 1000);
     } else {
       clearInterval(countdownInterval);
@@ -59,7 +61,8 @@ const Metronome = () => {
   }, [isPlaying]);
 
   useEffect(() => {
-    if (timer >= 120 && timer % 120 === 0) { // Verifica se passaram 2 minutos
+    if (timer >= 120 && timer % 120 === 0) {
+      // Verifica se passaram 2 minutos
       playBellSound(); // Toca o som do sino
     }
   }, [timer]);
@@ -67,13 +70,15 @@ const Metronome = () => {
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    return `${mins < 10 ? "0" : ""}${mins}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
   return (
     <div className="metronome">
       <h2>{formatTime(timer)}</h2>
-      <button id="metronome_btn" onClick={startStopMetronome}>{isPlaying ? 'Parar' : 'Iniciar'}</button>
+      <button id="metronome_btn" onClick={startStopMetronome}>
+        {isPlaying ? "Parar" : "Iniciar"}
+      </button>
     </div>
   );
 };

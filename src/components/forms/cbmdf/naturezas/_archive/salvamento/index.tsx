@@ -1,6 +1,3 @@
-export const SalvamentoForm = props => {
-    return (
-        <p>SALVAMENTO</p>
-
-    )
-}
+export const SalvamentoForm = (props) => {
+  return <p>SALVAMENTO</p>;
+};
