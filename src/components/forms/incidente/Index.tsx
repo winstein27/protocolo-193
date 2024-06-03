@@ -2,9 +2,13 @@ import { Grid } from "@mui/material";
 import { useFormContext } from "react-hook-form";
 import FormInputText from "../../form-components/FormInputText";
 import FormInputSwitch from "../../form-components/FormInputSwitch";
+import OutraAgenciaForm from "./forms/OutraAgenciaForm";
 
 const Incidente = () => {
-  const { control } = useFormContext();
+  const { control, watch } = useFormContext();
+
+  const naturezaAgenciaBooleanValue = watch("naturezaAgenciaBoolean");
+
   return (
     <Grid>
       <FormInputText
@@ -18,6 +22,9 @@ const Incidente = () => {
         label="Ocorrência atendida por outra agência"
         name="naturezaAgenciaBoolean"
       />
+
+      {naturezaAgenciaBooleanValue && <OutraAgenciaForm />}
+      {/* {!naturezaAgenciaBooleanValue && }. */}
     </Grid>
   );
 };

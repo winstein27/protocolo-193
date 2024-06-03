@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Alert, Snackbar, Grid } from "@mui/material";
 import { AlertMessage } from "@site/src/components/structure";
 import { useForm, FormProvider } from "react-hook-form";
-import StartForm from "./forms";
+import StartForm from "./forms/Index";
 
 const defaultValues = {
   incidenteBoolean: false,

@@ -1,6 +1,6 @@
 import { useFormContext } from "react-hook-form";
-import Incidente from "./incidentes/incidente";
-import NaoIncidente from "./incidentes/naoIncidente";
+import Incidente from "./incidente/Index";
+import NaoIncidente from "./nao-incidente/Index";
 import FormInputSwitch from "../form-components/FormInputSwitch";
 
 const StartForm = () => {

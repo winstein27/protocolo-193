@@ -1,11 +1,11 @@
 import { Grid } from "@mui/material";
 import { useFormContext } from "react-hook-form";
-import LigacaoMudaForm from "./naoIncidente/ligacaoMudaForm";
-import QuedaLigacaoForm from "./naoIncidente/quedaLigacaoForm";
-import TroteForm from "./naoIncidente/troteForm";
-import InformacaoForm from "./naoIncidente/informacaoForm";
-import AgradecimentoForm from "./naoIncidente/agradecimentoForm";
-import DenunciaForm from "./naoIncidente/denunciaForm";
+import LigacaoMudaForm from "./forms/LigacaoMudaForm";
+import QuedaLigacaoForm from "./forms/QuedaLigacaoForm";
+import TroteForm from "./forms/TroteForm";
+import InformacaoForm from "./forms/InformacaoForm";
+import AgradecimentoForm from "./forms/AgradecimentoForm";
+import DenunciaForm from "./forms/DenunciaForm";
 import FormInputRadio from "../../form-components/FormInputRadio";
 
 const opcoes = [
