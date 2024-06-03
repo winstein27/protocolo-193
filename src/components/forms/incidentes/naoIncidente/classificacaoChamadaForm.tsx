@@ -1,26 +1,4 @@
-import { Grid } from "@mui/material";
-import FormInputRadio from "@site/src/components/form-components/FormInputRadio";
 import { CheckboxGroup } from "@site/src/components/structure";
-import { useFormContext } from "react-hook-form";
-
-interface Props {
-  opcoes: { label: string; value: string }[];
-}
-
-export const ClassificacaoChamadaForm = (props: Props) => {
-  const { control } = useFormContext();
-
-  return (
-    <Grid item xs={12}>
-      <FormInputRadio
-        control={control}
-        label="Identifique o Tipo de Chamada"
-        name="tipoAtendimento"
-        opcoes={props.opcoes}
-      />
-    </Grid>
-  );
-};
 
 export const Agencias = () => {
   const options = [

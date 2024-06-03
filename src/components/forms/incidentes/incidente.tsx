@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
-import { Controller, useFormContext } from "react-hook-form";
-import { SwitchField } from "../../structure";
+import { useFormContext } from "react-hook-form";
 import FormInputText from "../../form-components/FormInputText";
+import FormInputSwitch from "../../form-components/FormInputSwitch";
 
 const Incidente = () => {
   const { control } = useFormContext();
@@ -13,15 +13,10 @@ const Incidente = () => {
         control={control}
       />
 
-      <Controller
-        name="naturezaAgenciaBoolean"
+      <FormInputSwitch
         control={control}
-        render={({ field }) => (
-          <SwitchField
-            {...field}
-            label="Ocorrência atendida por outra agência"
-          />
-        )}
+        label="Ocorrência atendida por outra agência"
+        name="naturezaAgenciaBoolean"
       />
     </Grid>
   );

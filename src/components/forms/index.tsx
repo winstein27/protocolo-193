@@ -1,7 +1,7 @@
-import { Controller, useFormContext } from "react-hook-form";
-import { SwitchField } from "../structure";
+import { useFormContext } from "react-hook-form";
 import Incidente from "./incidentes/incidente";
 import NaoIncidente from "./incidentes/naoIncidente";
+import FormInputSwitch from "../form-components/FormInputSwitch";
 
 const StartForm = () => {
   const { control, watch } = useFormContext();
@@ -10,12 +10,10 @@ const StartForm = () => {
 
   return (
     <>
-      <Controller
-        name="incidenteBoolean"
+      <FormInputSwitch
         control={control}
-        render={({ field }) => (
-          <SwitchField {...field} label="Não é ocorrência" />
-        )}
+        label="Não é ocorrência"
+        name="incidenteBoolean"
       />
 
       {incidenteBooleanValue && <NaoIncidente />}

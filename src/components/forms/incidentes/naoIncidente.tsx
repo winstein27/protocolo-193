@@ -1,5 +1,4 @@
 import { Grid } from "@mui/material";
-
 import { useFormContext } from "react-hook-form";
 import LigacaoMudaForm from "./naoIncidente/ligacaoMudaForm";
 import QuedaLigacaoForm from "./naoIncidente/quedaLigacaoForm";
@@ -7,7 +6,7 @@ import TroteForm from "./naoIncidente/troteForm";
 import InformacaoForm from "./naoIncidente/informacaoForm";
 import AgradecimentoForm from "./naoIncidente/agradecimentoForm";
 import DenunciaForm from "./naoIncidente/denunciaForm";
-import { ClassificacaoChamadaForm } from "./naoIncidente/classificacaoChamadaForm";
+import FormInputRadio from "../../form-components/FormInputRadio";
 
 const opcoes = [
   {
@@ -37,12 +36,18 @@ const opcoes = [
 ];
 
 const NaoIncidente = () => {
-  const { watch } = useFormContext();
+  const { watch, control } = useFormContext();
   const tipoAtendimento = watch("tipoAtendimento");
 
   return (
     <Grid>
-      <ClassificacaoChamadaForm opcoes={opcoes} />
+      <FormInputRadio
+        control={control}
+        label="Identifique o Tipo de Chamada"
+        name="tipoAtendimento"
+        opcoes={opcoes}
+      />
+
       {tipoAtendimento === "mudo" && <LigacaoMudaForm />}
       {tipoAtendimento === "queda" && <QuedaLigacaoForm />}
       {tipoAtendimento === "trote" && <TroteForm />}
