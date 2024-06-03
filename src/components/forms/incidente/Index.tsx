@@ -3,6 +3,7 @@ import { useFormContext } from "react-hook-form";
 import FormInputText from "../../form-components/FormInputText";
 import FormInputSwitch from "../../form-components/FormInputSwitch";
 import OutraAgenciaForm from "./forms/OutraAgenciaForm";
+import OcorrenciaForm from "./forms/OcorrenciaForm";
 
 const Incidente = () => {
   const { control, watch } = useFormContext();
@@ -24,7 +25,7 @@ const Incidente = () => {
       />
 
       {naturezaAgenciaBooleanValue && <OutraAgenciaForm />}
-      {/* {!naturezaAgenciaBooleanValue && }. */}
+      {!naturezaAgenciaBooleanValue && <OcorrenciaForm />}
     </Grid>
   );
 };
