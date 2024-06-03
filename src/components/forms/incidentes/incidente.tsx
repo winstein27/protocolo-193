@@ -1,20 +1,16 @@
 import { Grid } from "@mui/material";
 import { Controller, useFormContext } from "react-hook-form";
-import { CustomTextField, SwitchField } from "../../structure";
+import { SwitchField } from "../../structure";
+import FormInputText from "../../form-components/FormInputText";
 
 const Incidente = () => {
   const { control } = useFormContext();
   return (
     <Grid>
-      <Controller
+      <FormInputText
+        label="Descreva brevemente o que está ocorrendo"
         name="descricao"
         control={control}
-        render={({ field }) => (
-          <CustomTextField
-            {...field}
-            label="Descreva brevemente o que está ocorrendo"
-          />
-        )}
       />
 
       <Controller
