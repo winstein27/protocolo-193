@@ -16,8 +16,7 @@ const StartForm = () => {
         name="incidenteBoolean"
       />
 
-      {incidenteBooleanValue && <NaoIncidente />}
-      {!incidenteBooleanValue && <Incidente />}
+      {incidenteBooleanValue ? <NaoIncidente /> : <Incidente />}
     </>
   );
 };

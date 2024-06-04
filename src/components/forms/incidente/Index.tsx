@@ -24,8 +24,7 @@ const Incidente = () => {
         name="naturezaAgenciaBoolean"
       />
 
-      {naturezaAgenciaBooleanValue && <OutraAgenciaForm />}
-      {!naturezaAgenciaBooleanValue && <OcorrenciaForm />}
+      {naturezaAgenciaBooleanValue ? <OutraAgenciaForm /> : <OcorrenciaForm />}
     </Grid>
   );
 };
