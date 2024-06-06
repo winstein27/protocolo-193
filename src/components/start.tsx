@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Alert, Snackbar, Grid } from "@mui/material";
+import React from "react";
+import { Grid } from "@mui/material";
 import { AlertMessage } from "@site/src/components/structure";
 import { useForm, FormProvider } from "react-hook-form";
 import StartForm from "./forms/Index";
@@ -62,28 +62,11 @@ const defaultValues = {
 
 const Formulario = () => {
   const methods = useForm({ defaultValues });
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
-
-  const onSubmit = (data) => console.log(data);
 
   return (
     <FormProvider {...methods}>
       <Grid>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <Snackbar
-            open={snackbarOpen}
-            autoHideDuration={3000}
-            onClose={() => setSnackbarOpen(false)}
-          >
-            <Alert
-              onClose={() => setSnackbarOpen(false)}
-              severity="warning"
-              variant="filled"
-            >
-              Ocorrência definida como EMERGENCIAL
-            </Alert>
-          </Snackbar>
-
+        <form>
           <AlertMessage
             severity="info"
             title='"Bombeiros, Emergência, Distrito Federal"'

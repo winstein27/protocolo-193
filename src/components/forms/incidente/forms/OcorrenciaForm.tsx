@@ -2,6 +2,8 @@ import FormInputAutoComplete from "@site/src/components/form-components/FormInpu
 import { useFormContext } from "react-hook-form";
 import naturezasList from "@site/src/static/js/naturezas.json";
 import { normalizeString } from "@site/src/components/utils";
+import { Grid } from "@mui/material";
+import { CBMDFForm } from "../../cbmdf";
 
 const naturezasOrdenadas = naturezasList.sort((a, b) =>
   a.nome.localeCompare(b.nome)
@@ -80,19 +82,36 @@ const filtraNaturezas = (naturezas: any, descricao: string) => {
 };
 
 const OcorrenciaForm = () => {
-  const { control, watch } = useFormContext();
+  const { control, watch, setValue } = useFormContext();
 
   const descricaoValue = watch("descricao");
+  const naturezas = watch("naturezas");
 
   return (
-    <FormInputAutoComplete
-      control={control}
-      label="Naturezas"
-      name="naturezas"
-      options={naturezasOrdenadas}
-      optionLabel={(option: any) => option.nome}
-      filterOptions={() => filtraNaturezas(naturezasOrdenadas, descricaoValue)}
-    />
+    <>
+      <FormInputAutoComplete
+        control={control}
+        label="Naturezas"
+        name="naturezas"
+        options={naturezasOrdenadas}
+        optionLabel={(option: any) => option.nome}
+        filterOptions={() =>
+          filtraNaturezas(naturezasOrdenadas, descricaoValue)
+        }
+      />
+
+      {naturezas.length > 0 && (
+        <Grid item xs={12}>
+          {
+            // QUANDO - CLASSIFICAR COMO EMERGENCIAL / NÃO EMERGENCIAL (DEFINIR QUANDO SERÃO ENVIADOS OS RECURSOS)
+            <Grid>
+              {/* // Dados EMERGENCIAIS */}
+              <CBMDFForm tags={naturezas[0].tags} />
+            </Grid>
+          }{" "}
+        </Grid>
+      )}
+    </>
   );
 };
 

@@ -9,7 +9,7 @@ import { Control, Controller, FieldValues } from "react-hook-form";
 
 interface Props {
   control: Control<FieldValues>;
-  label: string;
+  label?: string;
   name: string;
   opcoes: { label: string; value: string }[];
 }
@@ -28,7 +28,9 @@ const FormInputRadio = (props: Props) => {
   return (
     <>
       <FormControl component="fieldset">
-        <FormLabel component="legend">{props.label}</FormLabel>
+        {!!props.label && (
+          <FormLabel component="legend">{props.label}</FormLabel>
+        )}
         <Controller
           name={props.name}
           control={props.control}

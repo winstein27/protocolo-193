@@ -1,7 +1,7 @@
 import { CapturaInseto } from "./naturezas/captura_inseto";
 import { ColisaoVeiculo } from "./naturezas/colisao_veiculo";
 import { IncendioVegetacao } from "./naturezas/incendio_vegetacao";
-import Ovace from "./naturezas/ovace";
+import Ovace from "./naturezas/Ovace";
 import Vitimas from "./naturezas/vitimas";
 import Suicidio from "./naturezas/suicidio";
 
