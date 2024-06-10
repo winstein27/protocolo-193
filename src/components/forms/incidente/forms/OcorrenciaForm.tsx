@@ -3,7 +3,8 @@ import { useFormContext } from "react-hook-form";
 import naturezasList from "@site/src/static/js/naturezas.json";
 import { normalizeString } from "@site/src/components/utils";
 import { Grid } from "@mui/material";
-import { CBMDFForm } from "../../cbmdf";
+import { CBMDFForm } from "../../../cbmdf";
+import Endereco from "@site/src/components/cbmdf/perguntas/Endereco";
 
 const naturezasOrdenadas = naturezasList.sort((a, b) =>
   a.nome.localeCompare(b.nome)
@@ -82,7 +83,7 @@ const filtraNaturezas = (naturezas: any, descricao: string) => {
 };
 
 const OcorrenciaForm = () => {
-  const { control, watch, setValue } = useFormContext();
+  const { control, watch } = useFormContext();
 
   const descricaoValue = watch("descricao");
   const naturezas = watch("naturezas");
@@ -107,6 +108,7 @@ const OcorrenciaForm = () => {
             <Grid>
               {/* // Dados EMERGENCIAIS */}
               <CBMDFForm tags={naturezas[0].tags} />
+              <Endereco />
             </Grid>
           }{" "}
         </Grid>

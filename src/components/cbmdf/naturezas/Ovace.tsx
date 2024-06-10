@@ -1,7 +1,8 @@
+import React from "react";
 import { Grid } from "@mui/material";
-import FormInputRadio from "@site/src/components/form-components/FormInputRadio";
-import { AlertMessage } from "@site/src/components/structure";
 import { useFormContext } from "react-hook-form";
+import { AlertMessage } from "../../structure";
+import FormInputRadio from "../../form-components/FormInputRadio";
 
 const Ovace = () => {
   const { control } = useFormContext();
@@ -21,6 +22,7 @@ const Ovace = () => {
             { label: "Não", value: "nao" },
             { label: "Sim", value: "sim" },
           ]}
+          defaultValue="nao"
         />
       </Grid>
     </Grid>

@@ -12,6 +12,7 @@ interface Props {
   label?: string;
   name: string;
   opcoes: { label: string; value: string }[];
+  defaultValue?: string;
 }
 
 const FormInputRadio = (props: Props) => {
@@ -39,7 +40,12 @@ const FormInputRadio = (props: Props) => {
             fieldState: { error },
             formState,
           }) => (
-            <RadioGroup value={value} onChange={onChange} row>
+            <RadioGroup
+              value={value}
+              onChange={onChange}
+              row
+              defaultValue={props.defaultValue}
+            >
               {generateRadioOptions()}
             </RadioGroup>
           )}
