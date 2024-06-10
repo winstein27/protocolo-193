@@ -5,7 +5,7 @@ interface Props {
   control: Control<FieldValues>;
   label?: string;
   name: string;
-  defaultValue: string;
+  defaultValue?: string;
   opcoes: { label: string; value: string }[];
 }
 
