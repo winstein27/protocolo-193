@@ -4,13 +4,12 @@ import {
   AlertMessage,
   EmConstrucao,
   InputCopy,
-  YesNoField,
 } from "@site/src/components/structure";
 import { useContext } from "react";
-import { CBMDFForm } from "../..";
 import FormInputText from "@site/src/components/form-components/FormInputText";
 import { useFormContext } from "react-hook-form";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+import FormInputRadioSimNao from "@site/src/components/form-components/FormInputRadioSimNao";
 
 const DF = () => {
   const { emergencial, protocoloEmergencialNome } =
@@ -20,11 +19,11 @@ const DF = () => {
   const enderecoValue = watch("endereco");
   const ufOcorrenciaValue = watch("ufOcorrencia");
   const cidadeOcorrenciaValue = watch("cidadeOcorrencia");
-  const descricaoValue = watch("descricao");
   const naturezasValue = watch("naturezas");
   const pontoReferenciaValue = watch("pontoReferencia");
   const nomeSolicitanteValue = watch("nomeSolicitante");
   const ocorrenciaRelatoValue = watch("ocorrenciaRelato");
+  const telefoneSolicitanteBooleanValue = watch("telefoneSolicitanteBoolean");
 
   // ADICIONAR DADOS DA NATUREZA
   const gerarNarrativa = (): string => {
@@ -64,9 +63,6 @@ const DF = () => {
         ></AlertMessage>
       )}
       <FormInputText control={control} label="Endereço" name="endereco" />
-      {/* <SwitchField label="Precisa de Ponto de Referência?" value={pontoReferenciaBoolean} onChange={(value) => handleChange("pontoReferenciaBoolean", value)} />
-  {pontoReferenciaBoolean &&
-  <Grid> */}
       <AlertMessage
         severity="info"
         title='"Tem algum ponto de referência ou complemento?"'
@@ -101,14 +97,6 @@ const DF = () => {
         title="Confirme no mapa se o endereço caiu no lugar correto. Caso tenha caído em outro local, digite o endereço de forma reduzida ou indique o localizador manualmente"
       ></AlertMessage>
       <AlertMessage severity="info" title='"Só mais um momento"' />
-      {/* {pontoReferencia &&
-      <Grid>
-          <AlertMessage severity="error" title="Copie o ponto de referência abaixo abaixo"></AlertMessage>
-          <InputCopy field="Ponto de Referência" value={pontoReferencia.toUpperCase()} />
-
-          <AlertMessage severity="error" title="Cole o Ponto de Referência no campo PONTO DE REFERÊNCIA"></AlertMessage>
-      </Grid>
-  } */}
 
       {/* CADASTRO INICIAL */}
       <Grid>
@@ -172,13 +160,11 @@ const DF = () => {
             >
               Informe os 4 últimos dígitos
             </AlertMessage>
-            {/* <YesNoField
-              value={telefoneSolicitanteBoolean}
-              onChange={(value) =>
-                handleChange("telefoneSolicitanteBoolean", value)
-              }
-            /> 
-            {!telefoneSolicitanteBoolean && (
+            <FormInputRadioSimNao
+              control={control}
+              name="telefoneSolicitanteBoolean"
+            />
+            {telefoneSolicitanteBooleanValue === "nao" && (
               <Grid>
                 <AlertMessage
                   severity="info"
@@ -191,20 +177,8 @@ const DF = () => {
                   name="telefoneSolicitanteNumber"
                 />
               </Grid>
-            )} */}
+            )}
           </Grid>
-
-          {/* COMO - Protocolo Operacional Padrão de acordo com elementos na cena (veículos, pessoas, objetos) */}
-
-          {/* <Grid>
-            // Dados não emergenciais
-            <CBMDFForm
-              tags={tags}
-              emergencial={false}
-              tagStates={tagStates}
-              updateTagState={UpdateTagState}
-            />
-          </Grid> */}
 
           {/* QUEM/QUANTO - RECURSOS EMPREGADOS - SOLICITAÇÃO DE OUTROS RECURSOS */}
           <Grid>
