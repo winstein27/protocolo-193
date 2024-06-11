@@ -7,10 +7,18 @@ import { EmergencialContext } from "../../Start";
 
 const Ovace = () => {
   const { control, watch } = useFormContext();
-  const { setEmergencial } = useContext(EmergencialContext);
+  const { setEmergencial, setProtocoloEmergencialNome } =
+    useContext(EmergencialContext);
 
   const confirmaOVACEValue = watch("confirmaOVACE");
-  setEmergencial(confirmaOVACEValue === "sim");
+
+  if (confirmaOVACEValue === "sim") {
+    setEmergencial(true);
+    setProtocoloEmergencialNome("OVACE");
+  } else {
+    setEmergencial(false);
+    setProtocoloEmergencialNome("");
+  }
 
   return (
     <Grid>

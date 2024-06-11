@@ -60,16 +60,29 @@ const defaultValues = {
   telefoneSolicitanteNumber: "",
 };
 
-export const EmergencialContext = createContext(
-  null as { emergencial: boolean; setEmergencial: (value: boolean) => void }
-);
+interface EmergencialContext {
+  emergencial: boolean;
+  setEmergencial: (value: boolean) => void;
+  protocoloEmergencialNome: string;
+  setProtocoloEmergencialNome: (value: string) => void;
+}
+
+export const EmergencialContext = createContext(null as EmergencialContext);
 
 const Formulario = () => {
   const methods = useForm({ defaultValues });
   const [emergencial, setEmergencial] = useState(false);
+  const [protocoloEmergencialNome, setProtocoloEmergencialNome] = useState("");
 
   return (
-    <EmergencialContext.Provider value={{ emergencial, setEmergencial }}>
+    <EmergencialContext.Provider
+      value={{
+        emergencial,
+        setEmergencial,
+        protocoloEmergencialNome,
+        setProtocoloEmergencialNome,
+      }}
+    >
       <FormProvider {...methods}>
         <Grid>
           <form>

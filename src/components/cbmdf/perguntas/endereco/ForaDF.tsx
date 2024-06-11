@@ -12,14 +12,12 @@ import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 
 const ForaDF = () => {
   const { watch } = useFormContext();
-  const { emergencial } = useContext(EmergencialContext);
+  const { emergencial, protocoloEmergencialNome } =
+    useContext(EmergencialContext);
 
   const ufOcorrenciaValue = watch("ufOcorrencia");
   const cidadeOcorrenciaValue = watch("cidadeOcorrencia");
   const narrativaValue = watch("descricao");
-
-  // atualizar do formulário
-  const protocoloEmergencialNome = "teste";
 
   return (
     <Grid>
