@@ -3,28 +3,29 @@ import Incidente from "./incidente/Index";
 import NaoIncidente from "./nao-incidente/Index";
 import FormInputSwitch from "../form-components/FormInputSwitch";
 import { Alert, Snackbar } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { EmergencialContext } from "../Start";
 
 const StartForm = () => {
-  const [emergencial, setEmergencial] = useState(false);
+  const { emergencial } = useContext(EmergencialContext);
+  const [openEmergencialSnackbar, setopenEmergencialSnackbar] = useState(false);
   const { control, watch } = useFormContext();
 
   const incidenteBooleanValue = watch("incidenteBoolean");
-  const confirmaOVACEValue = watch("confirmaOVACE");
 
   useEffect(() => {
-    if (confirmaOVACEValue === "sim") setEmergencial(true);
-  }, [confirmaOVACEValue]);
+    setopenEmergencialSnackbar(emergencial);
+  }, [emergencial]);
 
   return (
     <>
       <Snackbar
-        open={emergencial}
+        open={openEmergencialSnackbar}
         autoHideDuration={3000}
-        onClose={() => setEmergencial(false)}
+        onClose={() => setopenEmergencialSnackbar(false)}
       >
         <Alert
-          onClose={() => setEmergencial(false)}
+          onClose={() => setopenEmergencialSnackbar(false)}
           severity="warning"
           variant="filled"
         >

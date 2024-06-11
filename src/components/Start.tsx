@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import { Grid } from "@mui/material";
 import { AlertMessage } from "@site/src/components/structure";
 import { useForm, FormProvider } from "react-hook-form";
@@ -60,24 +60,31 @@ const defaultValues = {
   telefoneSolicitanteNumber: "",
 };
 
+export const EmergencialContext = createContext(
+  null as { emergencial: boolean; setEmergencial: (value: boolean) => void }
+);
+
 const Formulario = () => {
   const methods = useForm({ defaultValues });
+  const [emergencial, setEmergencial] = useState(false);
 
   return (
-    <FormProvider {...methods}>
-      <Grid>
-        <form>
-          <AlertMessage
-            severity="info"
-            title='"Bombeiros, Emergência, Distrito Federal"'
-          >
-            Repita até 3 vezes
-          </AlertMessage>
+    <EmergencialContext.Provider value={{ emergencial, setEmergencial }}>
+      <FormProvider {...methods}>
+        <Grid>
+          <form>
+            <AlertMessage
+              severity="info"
+              title='"Bombeiros, Emergência, Distrito Federal"'
+            >
+              Repita até 3 vezes
+            </AlertMessage>
 
-          <StartForm />
-        </form>
-      </Grid>
-    </FormProvider>
+            <StartForm />
+          </form>
+        </Grid>
+      </FormProvider>
+    </EmergencialContext.Provider>
   );
 };
 

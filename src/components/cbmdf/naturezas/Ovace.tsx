@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Grid } from "@mui/material";
 import { useFormContext } from "react-hook-form";
 import { AlertMessage } from "../../structure";
 import FormInputRadio from "../../form-components/FormInputRadio";
+import { EmergencialContext } from "../../Start";
 
 const Ovace = () => {
-  const { control } = useFormContext();
+  const { control, watch } = useFormContext();
+  const { setEmergencial } = useContext(EmergencialContext);
+
+  const confirmaOVACEValue = watch("confirmaOVACE");
+  setEmergencial(confirmaOVACEValue === "sim");
 
   return (
     <Grid>

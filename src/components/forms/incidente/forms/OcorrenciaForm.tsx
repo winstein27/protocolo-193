@@ -4,7 +4,7 @@ import naturezasList from "@site/src/static/js/naturezas.json";
 import { normalizeString } from "@site/src/components/utils";
 import { Grid } from "@mui/material";
 import { CBMDFForm } from "../../../cbmdf";
-import Endereco from "@site/src/components/cbmdf/perguntas/Endereco";
+import Endereco from "@site/src/components/cbmdf/perguntas/endereco/Index";
 
 const naturezasOrdenadas = naturezasList.sort((a, b) =>
   a.nome.localeCompare(b.nome)
