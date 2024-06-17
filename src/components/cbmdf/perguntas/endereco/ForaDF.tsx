@@ -17,7 +17,26 @@ const ForaDF = () => {
 
   const ufOcorrenciaValue = watch("ufOcorrencia");
   const cidadeOcorrenciaValue = watch("cidadeOcorrencia");
-  const narrativaValue = watch("descricao");
+  const ocorrenciaEmergencialValue = watch("ocorrenciaEmergencial");
+  const protocoloEmergencialBooleanValue = watch("protocoloEmergencialBoolean");
+  const naturezasValue = watch("naturezas");
+
+  const gerarNarrativa = () => {
+    let narrativa = "";
+
+    if (ocorrenciaEmergencialValue)
+      narrativa += "## OCORRÊNCIA EMERGENCIAL ##\n\n";
+
+    if (protocoloEmergencialBooleanValue)
+      narrativa += `## PROTOCOLO DE ${protocoloEmergencialNome} INICIADO PELA CENTRAL DE OPERAÇÕES  ##\n\n`;
+
+    narrativa += `Ocorrência fora da circunscrição\nTransferida para ${cidadeOcorrenciaValue} - ${ufOcorrenciaValue}\n\n`;
+    narrativa += `Natureza(s): ${naturezasValue
+      .map((item) => item.nome.toUpperCase())
+      .join(", ")}\n`;
+
+    return narrativa;
+  };
 
   return (
     <Grid>
@@ -82,7 +101,7 @@ const ForaDF = () => {
             severity="error"
             title="Copie e Cole a Narrativa abaixo no campo NARRATIVA"
           ></AlertMessage>
-          <InputCopy title="Narrativa" value={narrativaValue} />
+          <InputCopy title="Narrativa" value={gerarNarrativa()} />
         </Grid>
       )}
     </Grid>
