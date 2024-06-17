@@ -1,7 +1,6 @@
 import FormInputAutoComplete from "@site/src/components/form-components/FormInputAutoComplete";
 import { useFormContext } from "react-hook-form";
 import naturezasList from "@site/src/static/js/naturezas.json";
-import { normalizeString } from "@site/src/components/utils";
 import { Grid } from "@mui/material";
 import { CBMDFForm } from "../../../cbmdf";
 import Endereco from "@site/src/components/cbmdf/perguntas/endereco/Index";
@@ -9,6 +8,13 @@ import Endereco from "@site/src/components/cbmdf/perguntas/endereco/Index";
 const naturezasOrdenadas = naturezasList.sort((a, b) =>
   a.nome.localeCompare(b.nome)
 );
+
+const normalizeString = (str: string) => {
+  return str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9]/g, "");
+};
 
 const filtraNaturezas = (naturezas: any, descricao: string) => {
   const excludedWords = [
