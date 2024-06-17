@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
+import InputCopiable from "@site/src/components/data-display/InputCopiable";
 import AlertMessage from "@site/src/components/data-display/messages/AlertMessage";
-import { InputCopy } from "@site/src/components/structure";
 
 const LigacaoMudaForm = () => {
   return (
@@ -22,7 +22,7 @@ const LigacaoMudaForm = () => {
         title="Classifique o atendimento como MUDO no campo CLASSIFICAÇÃO DA CHAMADA"
       />
       <AlertMessage severity="error" title="Copie o texto abaixo" />
-      <InputCopy field="Narrativa" value={`LIGAÇÃO MUDA`} />
+      <InputCopiable label="Narrativa" value="LIGAÇÃO MUDA" />
       <AlertMessage severity="error" title="Cole o texto no campo NARRATIVA" />
       <AlertMessage severity="error" title="Finalize o atendimento" />
     </Grid>

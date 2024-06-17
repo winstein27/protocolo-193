@@ -1,6 +1,5 @@
 import { Button, Grid } from "@mui/material";
 import { EmergencialContext } from "@site/src/components/Start";
-import { InputCopy } from "@site/src/components/structure";
 import { useContext } from "react";
 import FormInputText from "@site/src/components/form-components/FormInputText";
 import { useFormContext } from "react-hook-form";
@@ -8,6 +7,7 @@ import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import FormInputRadioSimNao from "@site/src/components/form-components/FormInputRadioSimNao";
 import AlertMessage from "@site/src/components/data-display/messages/AlertMessage";
 import EmConstrucao from "@site/src/components/data-display/messages/EmConstrução";
+import InputCopiable from "@site/src/components/data-display/InputCopiable";
 
 const DF = () => {
   const { emergencial, protocoloEmergencialNome } =
@@ -75,8 +75,8 @@ const DF = () => {
         title='"Um momento, vamos enviar a ocorrência para o socorro mais próximo"'
       />
       <AlertMessage severity="error" title="Copie o endereço abaixo" />
-      <InputCopy
-        field="Endereço"
+      <InputCopiable
+        label="Endereço"
         value={`${enderecoValue.toUpperCase()} - ${cidadeOcorrenciaValue.toUpperCase()} - ${ufOcorrenciaValue}`}
       />
       <AlertMessage
@@ -93,8 +93,8 @@ const DF = () => {
       {/* CADASTRO INICIAL */}
       <Grid>
         <AlertMessage severity="error" title="Copie o texto abaixo" />
-        <InputCopy
-          field="Narrativa"
+        <InputCopiable
+          label="Narrativa"
           value={`${gerarNarrativa()}\n## CADASTRO EM ANDAMENTO NA COCB - AGUARDE MAIS INFORMAÇÕES ##`}
         />
         <AlertMessage severity="error" title="Cole no campo NARRATIVA" />
@@ -180,7 +180,7 @@ const DF = () => {
             />
 
             <AlertMessage severity="error" title="Copie o texto abaixo" />
-            <InputCopy field="Narrativa" value={gerarNarrativa()} />
+            <InputCopiable label="Narrativa" value={gerarNarrativa()} />
             <AlertMessage severity="error" title="Cole no campo NARRATIVA" />
             <AlertMessage
               severity="error"

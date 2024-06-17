@@ -1,12 +1,12 @@
 import { Button, Grid } from "@mui/material";
 import { EmergencialContext } from "@site/src/components/Start";
 import TabelaUnidades from "@site/src/components/data-display/TabelaUnidades";
-import { InputCopy } from "@site/src/components/structure";
 import { useContext } from "react";
 import { useFormContext } from "react-hook-form";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import AlertMessage from "@site/src/components/data-display/messages/AlertMessage";
 import EmConstrucao from "@site/src/components/data-display/messages/EmConstrução";
+import InputCopiable from "@site/src/components/data-display/InputCopiable";
 
 const ForaDF = () => {
   const { watch } = useFormContext();
@@ -93,7 +93,7 @@ const ForaDF = () => {
             severity="error"
             title="Copie e Cole a Narrativa abaixo no campo NARRATIVA"
           />
-          <InputCopy title="Narrativa" value={gerarNarrativa()} />
+          <InputCopiable label="Narrativa" value={gerarNarrativa()} />
         </Grid>
       )}
     </Grid>
