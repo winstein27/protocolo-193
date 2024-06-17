@@ -1,19 +1,17 @@
 import { Grid } from "@mui/material";
-import {
-  AlertMessage,
-  CustomTextField,
-  EmConstrucao,
-} from "@site/src/components/structure";
+import FormInputText from "@site/src/components/form-components/FormInputText";
+import { AlertMessage, EmConstrucao } from "@site/src/components/structure";
+import { useFormContext } from "react-hook-form";
 
-const InformacaoForm = (props) => {
+const InformacaoForm = () => {
+  const { control } = useFormContext();
   return (
     <Grid item xs={12}>
       <EmConstrucao />
-      <CustomTextField
+      <FormInputText
+        control={control}
         label="Descreva a informação requisitada"
         name="informacaoRelato"
-        value={props.informacaoRelato}
-        onChange={props.onChange}
       />
       <AlertMessage
         severity="info"
