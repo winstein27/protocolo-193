@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
+import AlertMessage from "@site/src/components/data-display/messages/AlertMessage";
+import EmConstrucao from "@site/src/components/data-display/messages/EmConstrução";
 import FormInputText from "@site/src/components/form-components/FormInputText";
-import { AlertMessage, EmConstrucao } from "@site/src/components/structure";
 import { useFormContext } from "react-hook-form";
 
 const AgradecimentoForm = () => {
@@ -16,19 +17,16 @@ const AgradecimentoForm = () => {
       <AlertMessage
         severity="info"
         title='"Um momento, vamos buscar a resposta"'
-      ></AlertMessage>
+      />
       <AlertMessage
         severity="error"
         title="Lance o número que efetuou a ligação no campo NÚMERO DO TELEFONE"
-      ></AlertMessage>
+      />
       <AlertMessage
         severity="error"
         title="Classifique o atendimento como QUEDA DE LIGAÇÃO no campo CLASSIFICAÇÃO DA CHAMADA"
-      ></AlertMessage>
-      <AlertMessage
-        severity="error"
-        title="Finalize o atendimento"
-      ></AlertMessage>
+      />
+      <AlertMessage severity="error" title="Finalize o atendimento" />
     </Grid>
   );
 };

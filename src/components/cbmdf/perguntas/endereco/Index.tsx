@@ -1,9 +1,9 @@
 import { useFormContext } from "react-hook-form";
 import FormInputSelect from "../../../form-components/FormInputSelect";
-import { AlertMessage } from "../../../structure";
 import cidadesData from "@site/src/static/js/cidades.json";
 import ForaDF from "./ForaDF";
 import DF from "./DF";
+import AlertMessage from "@site/src/components/data-display/messages/AlertMessage";
 
 const ufs = Object.keys(cidadesData).map((uf) => ({ label: uf, value: uf }));
 

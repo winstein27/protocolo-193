@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
-import { AlertMessage } from "../structure";
 import FormInputRadio from "./FormInputRadio";
 import { Control, FieldValues } from "react-hook-form";
+import AlertMessage from "../data-display/messages/AlertMessage";
 
 interface Props {
   control: Control<FieldValues>;
@@ -13,9 +13,7 @@ interface Props {
 const FormInputRadioSimNao = (props: Props) => {
   return (
     <Grid>
-      {!!props.label && (
-        <AlertMessage severity="info" title={props.label}></AlertMessage>
-      )}
+      {!!props.label && <AlertMessage severity="info" title={props.label} />}
       <FormInputRadio
         control={props.control}
         name={props.name}

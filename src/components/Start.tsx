@@ -1,8 +1,8 @@
 import React, { createContext, useState } from "react";
 import { Grid } from "@mui/material";
-import { AlertMessage } from "@site/src/components/structure";
 import { useForm, FormProvider } from "react-hook-form";
 import StartForm from "./forms/Index";
+import AlertMessage from "./data-display/messages/AlertMessage";
 
 const defaultValues = {
   incidenteBoolean: false,
@@ -89,10 +89,8 @@ const Formulario = () => {
             <AlertMessage
               severity="info"
               title='"Bombeiros, Emergência, Distrito Federal"'
-            >
-              Repita até 3 vezes
-            </AlertMessage>
-
+              message="Repita até 3 vezes"
+            />
             <StartForm />
           </form>
         </Grid>
