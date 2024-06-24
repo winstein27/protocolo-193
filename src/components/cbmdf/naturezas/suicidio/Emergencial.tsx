@@ -1,10 +1,10 @@
 import { Grid } from "@mui/material";
 import { useFormContext } from "react-hook-form";
-import AlertMessage from "../../data-display/messages/AlertMessage";
-import EmConstrucao from "../../data-display/messages/EmConstrução";
-import FormInputRadio from "../../form-components/FormInputRadio";
+import AlertMessage from "../../../data-display/messages/AlertMessage";
+import EmConstrucao from "../../../data-display/messages/EmConstrução";
+import FormInputRadio from "../../../form-components/FormInputRadio";
 
-const Suicidio = () => {
+const Emergencial = () => {
   const { control, watch } = useFormContext();
 
   const statusSuicidioValue = watch("statusSuicidio");
@@ -48,4 +48,4 @@ const Suicidio = () => {
   );
 };
 
-export default Suicidio;
+export default Emergencial;

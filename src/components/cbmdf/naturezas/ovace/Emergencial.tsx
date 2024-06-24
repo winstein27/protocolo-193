@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Grid } from "@mui/material";
 import { useFormContext } from "react-hook-form";
-import { EmergencialContext } from "../../Start";
-import FormInputRadioSimNao from "../../form-components/FormInputRadioSimNao";
+import { EmergencialContext } from "../../../Start";
+import FormInputRadioSimNao from "../../../form-components/FormInputRadioSimNao";
 
-const Ovace = () => {
+const Emergencial = () => {
   const { control, watch } = useFormContext();
   const { setEmergencial, setProtocoloEmergencialNome } =
     useContext(EmergencialContext);
@@ -26,4 +26,4 @@ const Ovace = () => {
   );
 };
 
-export default Ovace;
+export default Emergencial;

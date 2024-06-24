@@ -2,8 +2,8 @@ import FormInputAutoComplete from "@site/src/components/form-components/FormInpu
 import { useFormContext } from "react-hook-form";
 import naturezasList from "@site/src/static/js/naturezas.json";
 import { Grid } from "@mui/material";
-import { CBMDFForm } from "../../../cbmdf";
 import Endereco from "@site/src/components/cbmdf/perguntas/endereco/Index";
+import { emergenciais, naoEmergenciais } from "@site/src/componentsMap";
 
 const naturezasOrdenadas = naturezasList.sort((a, b) =>
   a.nome.localeCompare(b.nome)
@@ -109,14 +109,19 @@ const OcorrenciaForm = () => {
 
       {naturezas.length > 0 && (
         <Grid item xs={12}>
-          {
-            // QUANDO - CLASSIFICAR COMO EMERGENCIAL / NÃO EMERGENCIAL (DEFINIR QUANDO SERÃO ENVIADOS OS RECURSOS)
-            <Grid>
-              {/* // Dados EMERGENCIAIS */}
-              <CBMDFForm tags={naturezas[0].tags} />
-              <Endereco />
-            </Grid>
-          }{" "}
+          {naturezas.map((natureza) =>
+            !!emergenciais[natureza.tags[0]]
+              ? emergenciais[natureza.tags[0]]()
+              : null
+          )}
+
+          <Endereco />
+
+          {naturezas.map((natureza) =>
+            !!naoEmergenciais[natureza.tags[0]]
+              ? naoEmergenciais[natureza.tags[0]]()
+              : null
+          )}
         </Grid>
       )}
     </>
