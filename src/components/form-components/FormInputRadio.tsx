@@ -17,11 +17,12 @@ interface Props {
 
 const FormInputRadio = (props: Props) => {
   const generateRadioOptions = () => {
-    return props.opcoes.map((singleOption) => (
+    return props.opcoes.map((singleOption, i) => (
       <FormControlLabel
         value={singleOption.value}
         label={singleOption.label}
         control={<Radio />}
+        key={i}
       />
     ));
   };
