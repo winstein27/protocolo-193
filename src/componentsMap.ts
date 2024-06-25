@@ -1,16 +1,20 @@
 import CapturaInsetoEmergencial from "./components/cbmdf/naturezas/captura_inseto/Emergencial";
 import CapturaInsetoNaoEmergencial from "./components/cbmdf/naturezas/captura_inseto/NaoEmergencial";
+import ColisaoVeiculoEmergencial from "./components/cbmdf/naturezas/colisao_veiculo/Emergencial";
+import ColisaoVeiculoNaoEmergencial from "./components/cbmdf/naturezas/colisao_veiculo/NaoEmergencial";
+import IncendioVegetacaoEmergencial from "./components/cbmdf/naturezas/incendio_vegetacao/Emergencial";
+import IncendioVegetacaoNaoEmergencial from "./components/cbmdf/naturezas/incendio_vegetacao/NaoEmergencial";
 import OVACEEmergencial from "./components/cbmdf/naturezas/ovace/Emergencial";
-import Emergencial from "./components/cbmdf/naturezas/suicidio/Emergencial";
+import SuicidioEmergencial from "./components/cbmdf/naturezas/suicidio/Emergencial";
 
 // Componentes correspondentes às tags
 const emergenciais = {
   // vitimas: Vitimas,
   captura_inseto: CapturaInsetoEmergencial,
-  // colisao_veiculo: ColisaoVeiculo,
-  // incendio_vegetacao: IncendioVegetacao,
+  colisao_veiculo: ColisaoVeiculoEmergencial,
+  incendio_vegetacao: IncendioVegetacaoEmergencial,
   ovace: OVACEEmergencial,
-  suicidio: Emergencial,
+  suicidio: SuicidioEmergencial,
 
   // afogamento: Afogamento,
   // incendio_edificacao: IncendioEdificacao,
@@ -30,6 +34,8 @@ const emergenciais = {
 
 const naoEmergenciais = {
   captura_inseto: CapturaInsetoNaoEmergencial,
+  colisao_veiculo: ColisaoVeiculoNaoEmergencial,
+  incendio_vegetacao: IncendioVegetacaoNaoEmergencial,
 };
 
 export { emergenciais, naoEmergenciais };
